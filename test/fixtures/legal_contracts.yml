@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  videographer: MyString
+  hiring_attorney: MyString
+  firm: MyString
+  recording_venue: MyString
+  due_date: MyString
+  instructions: MyString
+  witness: MyString
+  ticket_id: MyString
+  media_format: MyString
+  billable_hours: 1
+  signature: false
+
+two:
+  videographer: MyString
+  hiring_attorney: MyString
+  firm: MyString
+  recording_venue: MyString
+  due_date: MyString
+  instructions: MyString
+  witness: MyString
+  ticket_id: MyString
+  media_format: MyString
+  billable_hours: 1
+  signature: false

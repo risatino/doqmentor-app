@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  musician: MyString
+  client: MyString
+  gig_id: MyString
+  title: MyString
+  event_venue: MyString
+  notes: MyString
+  due_date: MyString
+  billable_hours: 1
+  signature: false
+
+two:
+  musician: MyString
+  client: MyString
+  gig_id: MyString
+  title: MyString
+  event_venue: MyString
+  notes: MyString
+  due_date: MyString
+  billable_hours: 1
+  signature: false

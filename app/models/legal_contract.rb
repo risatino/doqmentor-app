@@ -1,0 +1,2 @@
+class LegalContract < ApplicationRecord
+end

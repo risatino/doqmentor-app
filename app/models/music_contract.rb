@@ -1,0 +1,2 @@
+class MusicContract < ApplicationRecord
+end

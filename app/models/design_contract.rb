@@ -1,0 +1,2 @@
+class DesignContract < ApplicationRecord
+end
