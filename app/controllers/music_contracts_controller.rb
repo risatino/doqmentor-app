@@ -6,20 +6,21 @@ class MusicContractsController < ApplicationController
   end
 
   def new
-    @music_contract = DesignContract.new
+    @music_contract = MusicContract.new
   end
 
   def create
-    @design_contract = DesignContract.create(designer: params[:designer],
-                                             client: params[:client],
-                                             gig_id: params[:gig_id],
-                                             title: params[:title],
-                                             due_date: params[:due_date],
-                                             specs: params[:specs])
+    @music_contract = MusicContract.create(musician: params[:musician],
+                                           client: params[:client],
+                                           gig_id: params[:gig_id],
+                                           title: params[:title],
+                                           event_venue: params[:event_venue],
+                                           notes: params[:notes],
+                                           due_date: params[:due_date])
     
-    if @design_contract.save
+    if @music_contract.save
       flash[:success] = "Your document has been created"
-      redirect_to "/design-docs/#{@design_contract.id}"
+      redirect_to "/music-docs/#{@music_contract.id}"
     else
       render 'new.html.erb'
     end
@@ -27,31 +28,33 @@ class MusicContractsController < ApplicationController
   end
 
   def show
-    @design_contract = DesignContract.find(params[:id])
+    @music_contract = MusicContract.find(params[:id])
   end
 
   def edit
-    @design_contract = DesignContract.find(params[:id])
+    @music_contract = MusicContract.find(params[:id])
   end
 
   def update
-    @design_contract = DesignContract.find(params[:id])
-    @design_contract.update(designer: params[:designer],
-                            client: params[:client],
-                            gig_id: params[:gig_id],
-                            title: params[:title],
-                            due_date: params[:due_date],
-                            specs: params[:specs])
+    @music_contract = MusicContract.find(params[:id])
+    @music_contract.update(musician: params[:musician],
+                           client: params[:client],
+                           gig_id: params[:gig_id],
+                           title: params[:title],
+                           event_venue: params[:event_venue],
+                           notes: params[:notes],
+                           due_date: params[:due_date])
+
 
     flash[:success] = "Your contract has been updated."
-    redirect_to "/design-docs/#{@design_contract.id}"  
+    redirect_to "/music-docs/#{@music_contract.id}"  
   end
 
   def destroy
-    @design_contract = DesignContract.find(params[:id])
-    @design_contract.destroy
+    @music_contract = MusicContract.find(params[:id])
+    @music_contract.destroy
     
     flash[:warning] = "Your contract has been deleted."
-    redirect_to '/design-docs' 
+    redirect_to '/music-docs' 
   end
 end
