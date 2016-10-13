@@ -1,0 +1,2 @@
+class DesignContractsController < ApplicationController
+end
