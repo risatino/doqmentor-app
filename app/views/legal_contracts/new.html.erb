@@ -1,1 +1,59 @@
-new.html.erb
+<h2>Customize Legal Contract:</h2>
+<%= form_tag '/legal-docs', method: :post do %>
+<div>
+  <%= label_tag :videographer %>
+  <%= text_field_tag :videographer, @legal_contract.videographer %>
+</div>
+
+<div>
+  <%= label_tag :ticket_id %>
+  <%= text_field_tag :ticket_id, @legal_contract.ticket_id %>
+</div>
+
+<div>
+  <%= label_tag :hiring_attorney %>
+  <%= text_field_tag :hiring_attorney, @legal_contract.hiring_attorney %>
+</div>
+ 
+<div>
+  <%= label_tag :firm %>
+  <%= text_field_tag :firm, @legal_contract.firm %>
+</div>
+
+<div>
+  <%= label_tag :recording_venue %>
+  <%= text_field_tag :recording_venue, @legal_contract.recording_venue %>
+</div>
+
+<div>
+  <%= label_tag :due_date %>
+  <%= text_field_tag :due_date, @legal_contract.due_date %>
+</div>
+
+<div>
+  <%= label_tag :instructions %>
+  <%= text_field_tag :instructions, @legal_contract.instructions %>
+</div>
+
+<div>
+  <%= label_tag :witness %>
+  <%= text_field_tag :witness, @legal_contract.witness %>
+</div>
+
+<div>
+  <%= label_tag :media_format %>
+  <%= text_field_tag :media_format, @legal_contract.media_format %>
+</div>
+
+<div>
+  <%= label_tag :billable_hours %>
+  <%= text_field_tag :billable_hours, @legal_contract.billable_hours %>
+</div>
+
+<div>
+  <% hidden_field_tag :client_id %>
+</div>
+
+    <%= submit_tag 'Create New Document', class:"btn btn-success" %>
+</div> 
+<% end %>

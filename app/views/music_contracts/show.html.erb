@@ -1,0 +1,12 @@
+<section>
+<h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-info" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+<br>
+<h2>Current Music Document</h2>
+<h3>Musician: <%= @music_contract.musician %></h3>
+<h3>Client: <%= @music_contract.client %></h3>
+<h3>Unique ID: <%= @music_contract.gig_id %></h3>
+<h3>Project Title: <a href="/music-docs/<%= @music_contract.id %>"><%= @music_contract.title %></a></h3>
+<h3>Event Venue: <%= @music_contract.event_venue %></h3>
+<h3>Notes: <%= @music_contract.notes %></h3>
+<h3>Gig Due Date: <%= @music_contract.due_date %></h3>
+</section>

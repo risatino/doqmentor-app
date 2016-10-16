@@ -1,0 +1,13 @@
+<section>
+<h2><%= link_to 'Back To Home Page', '/legal-docs', class: "btn btn-info" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+<br>
+<h2>Current Legal Contract</h2>
+<h3>Videographer: <%= @legal_contract.videographer %></h3>
+<h3>Hiring Attorney: <%= @legal_contract.hiring_attorney %></h3>
+<h3>Unique Job ID: <a href="/legal-docs/<%= @legal_contract.id %>"><%= @legal_contract.ticket_id %></a></h3>
+<h3>Firm: <%= @legal_contract.firm %></h3>
+<h3>Recording Venue: <%= @legal_contract.recording_venue %></h3>
+<h3>Recording Venue: <%= @legal_contract.recording_venue %></h3>
+<h3>Deposition/Patent Filing Due Date: <%= @legal_contract.due_date %></h3>
+
+</section>

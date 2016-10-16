@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  
+  get '/' => 'clients#index'
+  get '/clients' => 'clients#index'
+  get '/clients/new' => 'clients#new'
+  post '/clients' => 'clients#create'
+  get '/clients/:id' => 'clients#show'
+  get '/clients/:id/edit' => 'clients#edit'
+  patch '/clients/:id' => 'clients#update'
+  delete '/clients/:id' => 'clients#destroy'
+
   get '/design-docs' => 'design_contracts#index'
   get '/design-docs/new' => 'design_contracts#new'
   post '/design-docs' => 'design_contracts#create'
@@ -23,14 +31,6 @@ Rails.application.routes.draw do
   get '/legal-docs/:id/edit' => 'legal_contracts#edit'
   patch '/legal-docs/:id' => 'legal_contracts#update'
   delete '/legal-docs/:id' => 'legal_contracts#destroy'
-
-  get '/clients' => 'clients#index'
-  get '/clients/new' => 'clients#new'
-  post '/clients' => 'clients#create'
-  get '/clients/:id' => 'clients#show'
-  get '/clients/:id/edit' => 'clients#edit'
-  patch '/clients/:id' => 'clients#update'
-  delete '/clients/:id' => 'clients#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'

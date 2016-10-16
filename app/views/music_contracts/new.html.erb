@@ -1,1 +1,49 @@
-new.html.erb
+<h2>Customize Music Contract:</h2>
+<%= form_tag '/music-docs', method: :post do %>
+<div>
+  <%= label_tag :musician %>
+  <%= text_field_tag :musician, @music_contract.musician %>
+</div>
+
+<div>
+  <%= label_tag :client %>
+  <%= text_field_tag :client, @music_contract.client %>
+</div>
+ 
+<div>
+  <%= label_tag :gig_id %>
+  <%= text_field_tag :gig_id, @music_contract.gig_id %>
+</div>
+
+<div>
+  <%= label_tag :title %>
+  <%= text_field_tag :title, @music_contract.title %>
+</div>
+
+<div>
+  <%= label_tag :event_venue %>
+  <%= text_field_tag :event_venue, @music_contract.event_venue %>
+</div>
+
+<div>
+  <%= label_tag :notes %>
+  <%= text_field_tag :notes, @music_contract.notes %>
+</div>
+
+<div>
+  <%= label_tag :due_date %>
+  <%= text_field_tag :due_date, @music_contract.due_date %>
+</div>
+
+<div>
+  <%= label_tag :billable_hours %>
+  <%= text_field_tag :billable_hours, @music_contract.billable_hours %>
+</div>
+
+<div>
+  <% hidden_field_tag :client_id %>
+</div>
+
+    <%= submit_tag 'Create New Document', class:"btn btn-success" %>
+</div> 
+<% end %>

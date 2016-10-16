@@ -1,1 +1,52 @@
-edit.html.erb
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Edit Design Document</h2>
+
+    <%= form_tag "/design-docs/#{ @design_contract.id }", method: :patch do %>
+      
+      <div>
+        <%= label_tag :designer %>
+        <%= text_field_tag :designer, @design_contract.designer %>
+      </div>
+      
+      <div>
+        <%= label_tag :client %>
+        <%= text_field_tag :client, @design_contract.client %>
+      </div>
+       
+      <div>
+        <%= label_tag :gig_id %>
+        <%= text_field_tag :gig_id, @design_contract.gig_id %>
+      </div>
+
+      <div>
+        <%= label_tag :title %>
+        <%= text_field_tag :title, @design_contract.title %>
+      </div>
+      
+      <div>
+        <%= label_tag :due_date %>
+        <%= text_field_tag :due_date, @design_contract.due_date %>
+      </div>
+      
+      <div>
+        <%= label_tag :specs %>
+        <%= text_field_tag :specs, @design_contract.specs %>
+      </div>
+      
+      <div>
+        <%= label_tag :billable_hours %>
+        <%= text_field_tag :billable_hours, @design_contract.billable_hours %>
+      </div>
+      
+      <div>
+        <% hidden_field_tag :client_id %>
+      </div>
+
+    <%= submit_tag "Submit Document Updates" %>
+
+      <% end %>
+    <div>
+  </div>
+</section>
