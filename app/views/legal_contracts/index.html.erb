@@ -1,1 +1,10 @@
-index.html.erb
+<section>
+<h2><%= link_to 'Legal Contracts', '/legal-docs',  class: "btn btn-info" %> <%= link_to 'New Legal Contract', '/legal-docs/new', class: "btn btn-info" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
+<br>
+<h2>Existing Legal Contracts</h2>
+<% @legal_contracts.each do |legal_contract| %>
+  <h3>Contract Title: <%= legal_contract.title %></h3>
+  <h3>Job ID: <a href="/legal-docs/<%= legal_contract.id %>"><%= legal_contract.title %></a></h3>
+  <h3>Deposition/Patent Filing Due Date: <%= legal_contract.due_date %></h3>
+<% end %>
+</section>

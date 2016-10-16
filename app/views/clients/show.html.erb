@@ -1,1 +1,10 @@
-show.html.erb
+<section>
+<h2><%= link_to 'Back To Home Page', '/clients', class: "btn btn-info" %> <%= link_to "Edit", "/clients/#{@client.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/clients/#{@client.id}", class: "btn btn-warning", method: :delete %></h2>
+<br>
+<h2>User client</h2>
+<h3>Name: <%= @client.name %></h3>
+<h3>Email: <%= @client.email %></h3>
+<h3>Company Address: <%= @client.address %></h3>
+<h3>Phone Number: <%= @client.phone %></h3>
+<h3>Description: <%= @client.description %></h3>
+</section>

@@ -1,9 +1,29 @@
 <h1><%= @gig.user.name %> Your next gig is being processed!</h1>
 
-<!-- #fix from here -->
-<!-- <p>Contract ID, User Name: < %= @document.id_present_to_customer %></p>
-<p>Purchased At < %= @document.pretty_created_at %></p>
+<br>
 
-< % @document.carted_products.each do |carted_product| %>
-<h2>< %= carted_product.document.user.name %> - Quantity: < %= carted_product.quantity %></h2>
-< % end %> -->
+<p>Contract ID, User Name: <%= @design_contract.id_present_to_customer %></p>
+<p>Purchased At <%= @design_contract.pretty_created_at %></p>
+
+<% @design_contract.carted_products.each do |carted_product| %>
+<h2><%= carted_product.design_contract.user.name %> - Quantity: <%= carted_product.quantity %></h2>
+<% end %>
+
+<br>
+
+<p>Contract ID, User Name: <%= @music_contract.id_present_to_customer %></p>
+<p>Purchased At <%= @music_contract.pretty_created_at %></p>
+
+<% @music_contract.carted_products.each do |carted_product| %>
+<h2><%= carted_product.music_contract.user.name %> - Quantity: <%= carted_product.quantity %></h2>
+<% end %>
+
+<br>
+
+<p>Contract ID, User Name: <%= @legal_contract.id_present_to_customer %></p>
+<p>Purchased At <%= @legal_contract.pretty_created_at %></p>
+
+<% @legal_contract.carted_products.each do |carted_product| %>
+<h2><%= carted_product.legal_contract.user.name %> - Quantity: <%= carted_product.quantity %></h2>
+<% end %>
+<br>
