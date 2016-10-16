@@ -3,8 +3,11 @@
 <br>
 <h2>Existing Music Contracts</h2>
 <% @music_contracts.each do |music_contract| %>
-  <h3>Contract Title: <%= music_contract.title %></h3>
-  <h3>Job ID: <a href="/music-docs/<%= music_contract.id %>"><%= music_contract.title %></a></h3>
+  <h3>Musician: <%= music_contract.musician %></h3>
+  <h3>Client: <%= music_contract.client %></h3>
+  <h3>Project Title: <a href="/music-docs/<%= music_contract.id %>"><%= music_contract.title %></a></h3>
+  <h3>Event Venue: <%= music_contract.event_venue %></h3>
+  <h3>Notes: <%= music_contract.notes %></h3>
   <h3>Gig Due Date: <%= music_contract.due_date %></h3>
 <% end %>
 </section>
