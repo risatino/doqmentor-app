@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  get '/' => 'design_contracts#index'
   get '/design-docs' => 'design_contracts#index'
   get '/design-docs/new' => 'design_contracts#new'
   post '/design-docs' => 'design_contracts#create'
@@ -9,7 +8,6 @@ Rails.application.routes.draw do
   patch '/design-docs/:id' => 'design_contracts#update'
   delete '/design-docs/:id' => 'design_contracts#destroy'
 
-  get '/' => 'music_contracts#index'
   get '/music-docs' => 'music_contracts#index'
   get '/music-docs/new' => 'music_contracts#new'
   post '/music-docs' => 'music_contracts#create'
@@ -18,7 +16,6 @@ Rails.application.routes.draw do
   patch '/music-docs/:id' => 'music_contracts#update'
   delete '/music-docs/:id' => 'music_contracts#destroy'
 
-  get '/' => 'legal_contracts#index'
   get '/legal-docs' => 'legal_contracts#index'
   get '/legal-docs/new' => 'legal_contracts#new'
   post '/legal-docs' => 'legal_contracts#create'
