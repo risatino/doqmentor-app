@@ -1,1 +1,32 @@
-edit.html.erb
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Edit Client</h2>
+  <%= form_tag "/clients/#{ @client.id }", method: :patch do %>
+    <div>
+      <%= label_tag :name %>
+      <%= text_field_tag :name, @client.name %>
+    </div>
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, @client.email %>
+    </div>
+    <div>
+      <%= label_tag :address %>
+      <%= text_field_tag :address, @client.address %>
+    </div>
+    <div>
+      <%= label_tag :phone %>
+      <%= text_field_tag :phone, @client.phone %>
+    </div>
+    <div>
+      <%= label_tag :notes %>
+      <%= text_field_tag :notes, @client.notes %>
+    </div>
+  <br>
+    <div>
+  <%= submit_tag "Submit Client Updates" %>
+    <% end %>
+    </div>
+  </div>
+</section>
