@@ -1,14 +1,70 @@
 <!DOCTYPE html>
-<html>
+  <html>
   <head>
-    <title>The DOQmentor App</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <title>The DOQmentor</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <body>
+    <header>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><h1>The DOQmentor</h1></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right black-text">
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></span></a>
+          <ul class="dropdown-menu" role="menu">
+              <li><a href="/clients/new">Add New Client</a></li>
+            <li class="divider"></li>
+            <% if current_user && current_user.admin %>
+              <li><%= link_to "New Design Gig", "/design-doc/new", class: "btn btn-default" %></li>
+            <% end %>
+
+            <% if current_user && current_user.admin %>
+              <li><%= link_to "New Music Gig", "/music-doc/new", class: "btn btn-default" %></li>
+            <% end %>
+
+            <% if current_user && current_user.admin %>
+              <li><%= link_to "New Legal Contract", "/legal-doc/new", class: "btn btn-default" %></li>
+            <% end %>
+    
+            <% if current_user %>
+              <li><%= link_to 'Log Out', '/logout', method: :delete %></li>
+            <% else %>
+              <li><a href="/signup">Sign Up</a></li>
+              <li><a href="/login">Log In</a></li>
+            <% end %>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> Orders(#{@cart_count})".html_safe, "/orders" %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+
+
+<%= yield %>
+</div>
+</body>
 </html>
