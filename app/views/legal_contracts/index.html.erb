@@ -3,12 +3,12 @@
 <br>
 <h2>Existing Legal Contracts</h2>
 <% @legal_contracts.each do |legal_contract| %>
-  <h3>Videographer: <%= legal_contract.videographer %></h3>
-  <h3>Hiring Attorney: <%= legal_contract.hiring_attorney %></h3>
+  <h3>Videographer: <%= @legal_contract.videographer %></h3>
+  <h3>Hiring Attorney: <%= @legal_contract.hiring_attorney %></h3>
   <h3>Unique Job ID: <a href="/legal-docs/<%= @legal_contract.id %>"><%= @legal_contract.ticket_id %></a></h3>
-  <h3>Firm: <%= legal_contract.firm %></h3>
-  <h3>Recording Venue: <%= legal_contract.recording_venue %></h3>
-  <h3>Witness: <%= legal_contract.witness %></h3>
-  <h3>Deposition/Patent Filing Due Date: <%= legal_contract.due_date %></h3>
+  <h3>Firm: <%= @legal_contract.firm %></h3>
+  <h3>Recording Venue: <%= @legal_contract.recording_venue %></h3>
+  <h3>Witness: <%= @legal_contract.witness %></h3>
+  <h3>Deposition/Patent Filing Due Date: <%= @legal_contract.due_date %></h3>
 <% end %>
 </section>
