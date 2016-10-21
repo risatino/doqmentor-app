@@ -12,7 +12,7 @@ class DesignContractsController < ApplicationController
   def create
     @design_contract = DesignContract.create(designer: params[:designer],
                                              client: params[:client],
-                                             gig_id: params[:gig_id],
+                                             gig_name: params[:gig_name],
                                              title: params[:title],
                                              due_date: params[:due_date],
                                              specs: params[:specs])
@@ -38,7 +38,7 @@ class DesignContractsController < ApplicationController
     @design_contract = DesignContract.find(params[:id])
     @design_contract.update(designer: params[:designer],
                             client: params[:client],
-                            gig_id: params[:gig_id],
+                            gig_name: params[:gig_name],
                             title: params[:title],
                             due_date: params[:due_date],
                             specs: params[:specs])

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021042311) do
+ActiveRecord::Schema.define(version: 20161021043306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20161021042311) do
   create_table "design_contracts", force: :cascade do |t|
     t.string   "designer"
     t.string   "client"
-    t.string   "gig_id"
+    t.string   "gig_name"
     t.string   "title"
     t.string   "due_date"
     t.string   "specs"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20161021042311) do
     t.string   "due_date"
     t.string   "instructions"
     t.string   "witness"
-    t.string   "ticket_id"
+    t.string   "ticket_name"
     t.string   "media_format"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20161021042311) do
   create_table "music_contracts", force: :cascade do |t|
     t.string   "musician"
     t.string   "client"
-    t.string   "gig_id"
+    t.string   "gig_name"
     t.string   "title"
     t.string   "event_venue"
     t.string   "notes"

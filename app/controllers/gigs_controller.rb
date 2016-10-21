@@ -3,7 +3,9 @@ class GigsController < ApplicationController
 
   def create
     @gig = Gig.create(client_id: params[:client_id],
-                      document_id: params[:document_id])
+                      legal_contract_id: params[:legal_contract_id],
+                      music_contract_id: params[:music_contract_id],
+                      design_contract_id: params[:design_contract_id])
 
     flash[:success] = 'New Gig Created!'
     redirect_to "/gigs/#{@gig.id}"

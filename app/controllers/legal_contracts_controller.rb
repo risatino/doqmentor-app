@@ -17,7 +17,7 @@ class LegalContractsController < ApplicationController
                                            due_date: params[:due_date],
                                            instructions: params[:instructions],
                                            witness: params[:witness],
-                                           ticket_id: params[:ticket_id],
+                                           ticket_name: params[:ticket_name],
                                            media_format: params[:media_format])
     
     if @legal_contract.save
@@ -46,7 +46,7 @@ class LegalContractsController < ApplicationController
                            due_date: params[:due_date],
                            instructions: params[:instructions],
                            witness: params[:witness],
-                           ticket_id: params[:ticket_id],
+                           ticket_name: params[:ticket_name],
                            media_format: params[:media_format])
 
     flash[:success] = "Your contract has been updated."

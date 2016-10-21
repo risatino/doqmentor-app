@@ -5,7 +5,7 @@
 <h3>Musician: <%= @music_contract.musician %></h3>
 <h3>Client: <%= @music_contract.client %></h3>
 <h3>Unique ID: <%= @music_contract.gig_id %></h3>
-<h3>Project Title: <a href="/music-docs/<%= @music_contract.id %>"><%= @music_contract.title %></a></h3>
+<h3>Project Title: <a href="/music-docs/<%= @music_contract.id %>"><%= @music_contract.title %> <%= music_contract.gig_name %></a></h3>
 <h3>Event Venue: <%= @music_contract.event_venue %></h3>
 <h3>Notes: <%= @music_contract.notes %></h3>
 <h3>Gig Due Date: <%= @music_contract.due_date %></h3>

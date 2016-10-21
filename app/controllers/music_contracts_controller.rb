@@ -12,7 +12,7 @@ class MusicContractsController < ApplicationController
   def create
     @music_contract = MusicContract.create(musician: params[:musician],
                                            client: params[:client],
-                                           gig_id: params[:gig_id],
+                                           gig_name: params[:gig_name],
                                            title: params[:title],
                                            event_venue: params[:event_venue],
                                            notes: params[:notes],
@@ -39,7 +39,7 @@ class MusicContractsController < ApplicationController
     @music_contract = MusicContract.find(params[:id])
     @music_contract.update(musician: params[:musician],
                            client: params[:client],
-                           gig_id: params[:gig_id],
+                           gig_name: params[:gig_name],
                            title: params[:title],
                            event_venue: params[:event_venue],
                            notes: params[:notes],
