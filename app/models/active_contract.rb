@@ -1,0 +1,2 @@
+class ActiveContract < ApplicationRecord
+end

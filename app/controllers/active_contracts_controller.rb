@@ -1,0 +1,2 @@
+class ActiveContractsController < ApplicationController
+end

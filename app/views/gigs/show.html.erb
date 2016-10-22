@@ -6,7 +6,7 @@
 <p>Purchased At <%= @design_contract.pretty_created_at %></p>
 
 <% @design_contract.carted_products.each do |carted_product| %>
-<h2><%= carted_product.design_contract.user.name %> - Quantity: <%= carted_product.quantity %></h2>
+<h2><%= active_contract.design_contract.user.name %> - Quantity: <%= active_contract.quantity %></h2>
 <% end %>
 
 <br>
@@ -14,8 +14,8 @@
 <p>Contract ID, User Name: <%= @music_contract.id_present_to_customer %></p>
 <p>Purchased At <%= @music_contract.pretty_created_at %></p>
 
-<% @music_contract.carted_products.each do |carted_product| %>
-<h2><%= carted_product.music_contract.user.name %> - Quantity: <%= carted_product.quantity %></h2>
+<% @music_contract.active_contracts.each do |active_contract| %>
+<h2><%= active_contract.music_contract.user.name %> - Quantity: <%= active_contract.quantity %></h2>
 <% end %>
 
 <br>
@@ -23,7 +23,7 @@
 <p>Contract ID, User Name: <%= @legal_contract.id_present_to_customer %></p>
 <p>Purchased At <%= @legal_contract.pretty_created_at %></p>
 
-<% @legal_contract.carted_products.each do |carted_product| %>
-<h2><%= carted_product.legal_contract.user.name %> - Quantity: <%= carted_product.quantity %></h2>
+<% @legal_contract.active_contracts.each do |active_contract| %>
+<h2><%= active_contract.legal_contract.user.name %> - Quantity: <%= active_contract.quantity %></h2>
 <% end %>
 <br>
