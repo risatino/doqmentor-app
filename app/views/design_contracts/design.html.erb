@@ -1,0 +1,26 @@
+<!-- make white SVG rectangle behind this page and create SVG lines? -->
+<div>
+  <h2>___________________________________________________</h2>
+<br>
+  <ul>Graphic Designer | <%= @design_contract.designer %></ul>
+  <br>
+  <ul>Signature: __________________________</ul>
+  <ul>Send Payments To: <%= @design_contract.designer %></ul>
+  <ul>2863 West 21st Place, Chicago, IL 60622</ul>
+  <ul>paypal@gmail.com | (800)600-3333</ul>
+<br>
+  <ul>Design Contract Number #<%= @design_contract.id %></ul>
+  <br>
+  <ul>Client | <%= @design_contract.client %></ul>
+  <br>
+  <ul>Signatures: _________________________</ul>
+</div>
+
+<br>
+<h3>Client: <%= @design_contract.client %></h3>
+<ul>Job Invoice: <%= @design_contract.gig_name %></ul>
+<h3>Project Title: <a href="/design-docs/<%= @design_contract.id %>"><%= @design_contract.title %> <%= @design_contract.gig_name %></a></h3>
+<h3>Gig Due Date: <%= @design_contract.due_date %></h3>
+<h3>Project Specs: <%= @design_contract.specs %></h3>
+
+
