@@ -41,5 +41,9 @@ Rails.application.routes.draw do
 
   post '/gigs' => 'gigs#create'
   get '/gigs/:id' => 'gigs#show'
+
+  post '/active_contracts' => 'active_contracts#create'
+  get '/active_contracts' => 'active_contracts#index'
+  delete '/active_contracts/:id' => 'active_contracts#destroy'
   
 end
