@@ -33,14 +33,16 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
   end
 
+
   def update
+
     @client = Client.find(params[:id])
-    @client = Client.update(name: params[:name],
-                            phone: params[:phone],
-                            user_id: current_user.id,
-                            email: params[:email],
-                            address: params[:address],
-                            notes: params[:notes])
+    @client.update(name: params[:name],
+                  phone: params[:phone],
+                  user_id: current_user.id,
+                  email: params[:email],
+                  address: params[:address],
+                  notes: params[:notes])
 
     flash[:success] = "Your client has been updated."
     redirect_to "/clients/#{@client.id}"
