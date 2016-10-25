@@ -4,58 +4,60 @@
   <div id="content-wrapper">
   <br>
   <br>
+    <p>LEGAL VIEW, INC. | <%= @legal_contract.videographer %></p>
+    <p>Videographer's Signature: _________________________</p>
+    <p>2863 West 21st Place, Chicago, IL 60622</p>
+    <p>payments@gmail.com | (800) 600-3333</p>
   <br>
-    <ul>Legal View, Inc.</ul>
-    <ul>Address Payments To: <%= @legal_contract.videographer %></ul>
+    <p>FIRM | <%= @legal_contract.firm %> Signature: _________________________</p>
+    <p><%= @legal_contract.hiring_attorney %> Read-On:</p>
+    <p>We are now on the record in the matter of: __________________________________</p>
+    <p>In the (court): __________________________________</p>
+    <p>Today's date is: <%= @legal_contract.due_date %></p>
+    <p>The time is now: __________________ AM/PM</p>
+    <p>This is the video recorded deposition of ____________________</p>
+    <p>We are located at: <%= @legal_contract.recording_venue %></p>
+    <p>My name is <%= @legal_contract.videographer %>, legal video specialist</p>
+    <p>The primary court reporter is <%= @legal_contract.hiring_attorney %>, I am in association with <%= @legal_contract.firm %> and Legal View Court Reporting and Video, Inc.</p>
+    <p>For the record, would counsel please introduce themselves and who they represent?</p>
+      <ul>(pause for appearances)</ul>
+    <p>The court reporter will now swear in the witness.</p>
+    <p> <%= @legal_contract.witness %>, Witness ___________________________</p>
+    <p>CASE #: <%= @legal_contract.ticket_name %></p>
+    <p>Selected Format: <%= @legal_contract.media_format %> | Instructions: <%= @legal_contract.instructions %></p>
+    <p>#<%= @legal_contract.ticket_name %> | To Be Completed By: <%= @legal_contract.due_date %></p>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div id="content-wrapper">
   <br>
-    <ul>Videographer's Signature: _________________________</ul>
   <br>
-    <ul>2863 West 21st Place, Chicago, IL 60622</ul>
-    <ul>payments@gmail.com | (800) 600-3333</ul>
+    <p>CASE #: <%= @legal_contract.ticket_name %></p>
+    <p>Regular Delivery (2 weeks from <%= @legal_contract.due_date %>)</p>
+    <p>FORMATS: MPEG1 | MPEG2 | MPG4 | DVD Video | Syncronization | Transcript (PDF) | Encoding | Video Editing | Rough ACSII | Realtime | Full/Mini</p>
   <br>
+    <p>Selected Format: <%= @legal_contract.media_format %> | Estimated Billable Production Hours $<%= @legal_contract.billable_hours %></p>
   <br>
-    <ul><%= @legal_contract.hiring_attorney %> Read-on</ul>
-    <br>
-    <ul>We are now on the record in the matter of: __________________________________</ul>
-    <ul>In the (court): __________________________________</ul>
-    <ul>Today's date is: <%= @legal_contract.due_date %></ul>
-    <ul>The time is now: __________________ AM/PM</ul>
-    <ul>This is the video recorded deposition of ____________________</ul>
-    <ul>We are located at: <%= @legal_contract.recording_venue %></ul>
-    <ul>My name is <%= @legal_contract.videographer %>, legal video specialist</ul>
-    <ul>The primary court reporter is <%= @legal_contract.hiring_attorney %>, I am in association with <%= @legal_contract.firm %> and Legal View Court Reporting and Video, Inc.</ul>
-    <ul>For the record, would counsel please introduce themselves and who they represent?</ul>
+    <p>Other Statements On The Record:</p>
+    
+      <ul>*Going ON the record: "we are going ON the record at _____ am/pm"</ul>
+      <ul>*Going OFF the record: "we are going OFF the record at _____ am/pm"</ul>
+      <ul>*Change of DVD: "we are going OFF the record with the end of tape # _____ at _____ am/pm"</ul>
+      <ul>*Change of DVD: "we are going ON the record with the beginning of tape # _____ at _____ am/pm"</ul>
+      <ul>*Deposition conclusion: "This marks the end of DVD # _____ and the deposition of ____________. We are now going OFF the record at _____ am/pm" </ul>
   <br>
-    <ul>(pause for appearances)</ul>
+    <p>For The Court Reporter:</p>
+      <ul>*Give them the correct spelulng of your full name and get their name</ul>
+      <ul>*Ask them if they want a headphone ulne - tell them you can adjust their volume, if too loud</ul>
+      <ul>*Ask them if they want a copy of the the audio in digital form (to be recorded during the deposition)</ul>
   <br>
-    <ul>The court reporter will now swear in the witness.</ul>
+      <ul>**Shipping Info Notes: Legal View, Inc. and <%= @legal_contract.videographer %>(Assigned Legal Videographer) does production.</ul>
   <br>
-    <ul>CASE #: <%= @legal_contract.ticket_name %></ul>
-    <ul>FORMATS: MPEG1 | MPEG2 | MPG4 | DVD Video | Syncronization | Transcript (PDF) | Encoding | Video Editing | Rough ACSII | Realtime | Full/Mini</ul>
-    <ul>Selected Format: <%= @legal_contract.media_format %></ul>
-    <ul>Instructions: <%= @legal_contract.instructions %></ul>
+    <p>I hereby acknowledge that by executing this order form I agree to pay the invoice submitted by Legal View, Inc., within the payment terms provided thereon for services requested and which have been rendered in the matter named above regardless of settlement, retraction, or other cessation of litigation.</p>
   <br>
-    <ul>FIRM | <%= @legal_contract.firm %></ul>
-  <br>
-    <ul>Signatures: _________________________</ul>
-  <br>
-    <ul>#<%= @legal_contract.ticket_name %> To Be Completed By: <%= @legal_contract.due_date %></ul>
-  <br>
-    <ul>Other Statements On The Record:</ul>
-    <li>Going ON the record: "we are going ON the record at _____ am/pm"</li>
-    <li>Going OFF the record: "we are going OFF the record at _____ am/pm"</li>
-    <li>Change of DVD: "we are going OFF the record with the end of tape # _____ at _____ am/pm"</li>
-    <li>Change of DVD: "we are going ON the record with the beginning of tape # _____ at _____ am/pm"</li>
-    <li>Deposition conclusion: "This marks the end of DVD # _____ and the deposition of ____________. We are now going OFF the record at _____ am/pm" </li>
-  <br>
-    <ul>Estimated Billable Hours $<%= @legal_contract.billable_hours %></ul>
-  <br>
-    <ul>For The Court Reporter:</ul>
-    <li>Give them the correct spelling of your full name and get their name</li>
-    <li>Ask them if they want a headphone line - tell them you can adjust their volume, if too loud</li>
-    <li>Ask them if they want a copy of the the audio in digital form (to be recorded during the deposition)</li>
-  <br>
-    <ul>Shipping Info Notes: Legal View, Inc. and <%= @legal_contract.videographer %>, Videographer does production.</ul>
+    <p>I, <%= @legal_contract.firm %>, and my client shall each be jointly and severally responsible for payment of the obligation hereunder incurred, including, but not limited to, accrued interest before and after judgment, and all costs incurred in collection, including any attorneys fees and court costs incurred to enforce said obligation, whether or not suit is filed.</p>
   </div>
 </div>
 
