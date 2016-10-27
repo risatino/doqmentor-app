@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022214753) do
+ActiveRecord::Schema.define(version: 20161027013102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20161022214753) do
     t.integer  "quantity"
     t.integer  "total_billable_hours"
     t.integer  "priority"
-    t.string   "status"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "active",               default: true
   end
 
   create_table "clients", force: :cascade do |t|
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20161022214753) do
     t.string   "address"
     t.string   "notes"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "active_gigs", default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "active",     default: true
   end
 
   create_table "design_contracts", force: :cascade do |t|
@@ -52,15 +52,17 @@ ActiveRecord::Schema.define(version: 20161022214753) do
     t.datetime "updated_at",                     null: false
     t.integer  "billable_hours", default: 0
     t.boolean  "signature",      default: false
+    t.boolean  "active",         default: true
   end
 
   create_table "gigs", force: :cascade do |t|
     t.integer  "client_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "legal_contract_id"
     t.integer  "music_contract_id"
     t.integer  "design_contract_id"
+    t.boolean  "active",             default: true
   end
 
   create_table "images", force: :cascade do |t|
@@ -88,6 +90,7 @@ ActiveRecord::Schema.define(version: 20161022214753) do
     t.datetime "updated_at",                      null: false
     t.integer  "billable_hours",  default: 0
     t.boolean  "signature",       default: false
+    t.boolean  "active",          default: true
   end
 
   create_table "music_contracts", force: :cascade do |t|
@@ -102,6 +105,7 @@ ActiveRecord::Schema.define(version: 20161022214753) do
     t.datetime "updated_at",                     null: false
     t.integer  "billable_hours", default: 0
     t.boolean  "signature",      default: false
+    t.boolean  "active",         default: true
   end
 
   create_table "users", force: :cascade do |t|

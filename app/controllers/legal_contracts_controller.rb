@@ -18,7 +18,8 @@ class LegalContractsController < ApplicationController
                                            instructions: params[:instructions],
                                            witness: params[:witness],
                                            ticket_name: params[:ticket_name],
-                                           media_format: params[:media_format])
+                                           media_format: params[:media_format],
+                                           billable_hours: params[:billable_hours])
     
     if @legal_contract.save
       flash[:success] = "Your document has been created"
@@ -47,7 +48,8 @@ class LegalContractsController < ApplicationController
                            instructions: params[:instructions],
                            witness: params[:witness],
                            ticket_name: params[:ticket_name],
-                           media_format: params[:media_format])
+                           media_format: params[:media_format],
+                           billable_hours: params[:billable_hours])
 
     flash[:success] = "Your contract has been updated."
     redirect_to "/legal-docs/#{@legal_contract.id}"  

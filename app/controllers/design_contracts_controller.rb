@@ -15,7 +15,8 @@ class DesignContractsController < ApplicationController
                                              gig_name: params[:gig_name],
                                              title: params[:title],
                                              due_date: params[:due_date],
-                                             specs: params[:specs])
+                                             specs: params[:specs],
+                                             billable_hours: params[:billable_hours])
     
     if @design_contract.save
       flash[:success] = "Your document has been created"
@@ -41,10 +42,12 @@ class DesignContractsController < ApplicationController
                             gig_name: params[:gig_name],
                             title: params[:title],
                             due_date: params[:due_date],
-                            specs: params[:specs])
+                            specs: params[:specs], 
+                            billable_hours: params[:billable_hours])
 
     flash[:success] = "Your contract has been updated."
-    redirect_to "/design-docs/#{@design_contract.id}"  
+    redirect_to "/design-docs/#{@design_contract.id}"
+
   end
 
   def destroy
