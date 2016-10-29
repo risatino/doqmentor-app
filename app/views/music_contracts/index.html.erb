@@ -10,6 +10,13 @@
   <h3>Notes: <%= music_contract.notes %></h3>
   <h3>Gig Due Date: <%= music_contract.due_date %></h3>
   <h4>Billable Hours: <%= music_contract.billable_hours %> </h4>
+  <h4>Job Status: 
+    <% if music_contract.active %> 
+    currently in progress...
+    <% else %> 
+    gig completed!
+    <% end %>
+  </h4>
   <br>
 <% end %>
 </section>

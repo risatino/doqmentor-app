@@ -11,6 +11,13 @@
     <h3>Witness: <%= legal_contract.witness %></h3>
     <h3>Deposition/Patent Filing Due Date: <%= legal_contract.due_date %></h3>
     <h4>Billable Hours: <%= legal_contract.billable_hours %> </h4>
+    <h4>Job Status: 
+      <% if legal_contract.active %> 
+      currently in progress...
+      <% else %> 
+      gig completed!
+      <% end %>
+    </h4>
     <br>
   <% end %>
 </section>
