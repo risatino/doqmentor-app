@@ -11,11 +11,13 @@
   <h3>Gig Due Date: <%= @music_contract.due_date %></h3>
 
   <% if @music_contract.active %>
-    <h3>This is active.</h3>
+    <button type="button" class="btn btn-default">Active</button>
+    </h3><button type="button" class="btn btn-success">Done!</button>
   <% else %>
-    <h3>This project has been completed.</h3>
+    </h3><button type="button" class="btn btn-success">Done!</button>
   <% end %>
-
+</div>
+  <br>
 </section>
 
 <!-- test view -->

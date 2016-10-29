@@ -1,6 +1,6 @@
 <section>
 <div class="container">
-  <h2><%= link_to 'Back To Home Page', '/design-docs', class: "btn btn-info" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <h2><%= link_to 'See Design Contracts', '/design-docs', class: "btn btn-info" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
   <h2>Design Contract Number #<%= @design_contract.id %></h2>
   <h3>Designer: <%= @design_contract.designer %></h3>
@@ -11,12 +11,13 @@
   <h3>Project Specs: <%= @design_contract.specs %></h3>
 
   <% if @design_contract.active %>
-    <h3>This is active.</h3>
+    <button type="button" class="btn btn-default">Active</button>
+    </h3><button type="button" class="btn btn-success">Done!</button>
   <% else %>
-    <h3>This project has been completed.</h3>
+    </h3><button type="button" class="btn btn-success">Done!</button>
   <% end %>
-  
 </div>
+  <br>
 </section>
 
 <!-- // test view // -->

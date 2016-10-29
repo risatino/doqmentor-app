@@ -1,5 +1,5 @@
 <section>
-  <h2><%= link_to 'Back To Home Page', '/legal-docs', class: "btn btn-info" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <h2><%= link_to 'See Legal Contracts', '/legal-docs', class: "btn btn-info" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
   <h2>Current Legal Contract</h2>
   <h3>Videographer: <%= @legal_contract.videographer %></h3>
@@ -11,11 +11,13 @@
   <h3>Deposition/Patent Filing Due Date: <%= @legal_contract.due_date %></h3>
 
   <% if @legal_contract.active %>
-    <h3>This is active.</h3>
+    <button type="button" class="btn btn-default">Active</button>
+    </h3><button type="button" class="btn btn-success">Done!</button>
   <% else %>
-    <h3>This project has been completed.</h3>
+    </h3><button type="button" class="btn btn-success">Done!</button>
   <% end %>
-  
+</div>
+  <br>
 </section>
 
 <!-- // test view // -->
