@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get '/design-docs/:id' => 'design_contracts#show'
   get '/design-docs/:id/edit' => 'design_contracts#edit'
   patch '/design-docs/:id' => 'design_contracts#update'
+  get '/design-docs/:id/toggle' => 'design_contracts#toggle'
   delete '/design-docs/:id' => 'design_contracts#destroy'
+
 
   get '/music-docs' => 'music_contracts#index'
   get '/music-docs/new' => 'music_contracts#new'

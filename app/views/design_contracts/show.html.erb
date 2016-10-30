@@ -10,14 +10,22 @@
   <h3>Gig Due Date: <%= @design_contract.due_date %></h3>
   <h3>Project Specs: <%= @design_contract.specs %></h3>
 
-  <% if @design_contract.active %>
-    <button type="button" class="btn btn-default">Active</button>
-    </h3><button type="button" class="btn btn-success">Done!</button>
-  <% else %>
-    </h3><button type="button" class="btn btn-success">Done!</button>
-  <% end %>
+  <%= link_to "Gig Status", "/design-docs/#{@design_contract.id}/toggle" %>
+
+  <h4>Job Status: 
+    <% if @design_contract.active %> 
+    currently in progress...
+    <% else %> 
+    gig completed!
+    <% end %>
+  </h4> 
+
+
+  <br>
 </div>
   <br>
+
+
 </section>
 
 <!-- // test view // -->

@@ -50,6 +50,19 @@ class DesignContractsController < ApplicationController
 
   end
 
+  def toggle
+    @contract = DesignContract.find(params[:id])
+
+    if @contract.active == false
+      @contract.update(active: true)
+    else
+      @contract.update(active: false)
+    end
+
+    redirect_to "/design-docs/#{@contract.id}"
+
+  end
+
   def destroy
     @design_contract = DesignContract.find(params[:id])
     @design_contract.destroy
@@ -57,4 +70,5 @@ class DesignContractsController < ApplicationController
     flash[:warning] = "Your contract has been deleted."
     redirect_to '/design-docs' 
   end
+
 end
