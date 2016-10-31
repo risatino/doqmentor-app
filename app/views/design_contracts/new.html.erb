@@ -1,44 +1,46 @@
-<h2>Customize Design Contract:</h2>
-<%= form_tag '/design-docs', method: :post do %>
-<div>
-  <%= label_tag :designer %>
-  <%= text_field_tag :designer, @design_contract.designer %>
-</div>
+<div class="container">
+  <h2>Customize Design Contract:</h2>
+    <%= form_tag '/design-docs', method: :post do %>
+      <div>
+        <%= label_tag :designer %>
+        <%= text_field_tag :designer, @design_contract.designer %>
+      </div>
 
-<div>
-  <%= label_tag :client %>
-  <%= text_field_tag :client, @design_contract.client %>
-</div>
- 
-<div>
-  <%= label_tag :gig_name %>
-  <%= text_field_tag :gig_name, @design_contract.gig_name %>
-</div>
+      <div>
+        <%= label_tag :client %>
+        <%= text_field_tag :client, @design_contract.client %>
+      </div>
+       
+      <div>
+        <%= label_tag :gig_name %>
+        <%= text_field_tag :gig_name, @design_contract.gig_name %>
+      </div>
 
-<div>
-  <%= label_tag :title %>
-  <%= text_field_tag :title, @design_contract.title %>
-</div>
+      <div>
+        <%= label_tag :title %>
+        <%= text_field_tag :title, @design_contract.title %>
+      </div>
 
-<div>
-  <%= label_tag :due_date %>
-  <%= text_field_tag :due_date, @design_contract.due_date %>
-</div>
+      <div>
+        <%= label_tag :due_date %>
+        <%= text_field_tag :due_date, @design_contract.due_date %>
+      </div>
 
-<div>
-  <%= label_tag :specs %>
-  <%= text_field_tag :specs, @design_contract.specs %>
-</div>
+      <div>
+        <%= label_tag :specs %>
+        <%= text_field_tag :specs, @design_contract.specs %>
+      </div>
 
-<div>
-  <%= label_tag :billable_hours %>
-  <%= text_field_tag :billable_hours, @design_contract.billable_hours %>
-</div>
+      <div>
+        <%= label_tag :billable_hours %>
+        <%= text_field_tag :billable_hours, @design_contract.billable_hours %>
+      </div>
 
-<div>
-  <% hidden_field_tag :client_id %>
-</div>
+      <div>
+        <% hidden_field_tag :client_id %>
+      </div>
 
-    <%= submit_tag 'Create New Document', class:"btn btn-success" %>
-  </div> 
-<% end %>
+        <%= submit_tag 'Create New Document', class:"btn btn-success" %>
+      </div> 
+    <% end %>
+</div>  

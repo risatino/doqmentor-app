@@ -1,27 +1,29 @@
-<h2>User Client</h2>
-<%= form_tag '/clients', method: :post do %>
-  <div>
-    <%= label_tag :name %>
-    <%= text_field_tag :name, @client.name %>
-  </div>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, @client.email %>
-  </div>
-  <div>
-    <%= label_tag :address %>
-    <%= text_field_tag :address, @client.address %>
-  </div>
-  <div>
-    <%= label_tag :phone %>
-    <%= text_field_tag :phone, @client.phone %>
-  </div>
-  <div>
-    <%= label_tag :notes %>
-    <%= text_field_tag :notes, @client.notes %>
-  </div>
-<br>
-  <div>
-    <%= submit_tag "Create New Client", class:"btn btn-success" %>
-  </div>
-<% end %>
+<div class="container">
+  <h2>User Client</h2>
+  <%= form_tag '/clients', method: :post do %>
+    <div>
+      <%= label_tag :name %>
+      <%= text_field_tag :name, @client.name %>
+    </div>
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, @client.email %>
+    </div>
+    <div>
+      <%= label_tag :address %>
+      <%= text_field_tag :address, @client.address %>
+    </div>
+    <div>
+      <%= label_tag :phone %>
+      <%= text_field_tag :phone, @client.phone %>
+    </div>
+    <div>
+      <%= label_tag :notes %>
+      <%= text_field_tag :notes, @client.notes %>
+    </div>
+  <br>
+    <div>
+      <%= submit_tag "Create New Client", class:"btn btn-success" %>
+    </div>
+  <% end %>
+</div>
