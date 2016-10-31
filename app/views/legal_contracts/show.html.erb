@@ -1,5 +1,6 @@
 <section>
-  <h2><%= link_to 'See Legal Contracts', '/legal-docs', class: "btn btn-info" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+<div class="container">
+  <h2><%= link_to 'See Legal Contracts', '/legal-docs', class: "btn btn-default" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
   <h2>Current Legal Contract</h2>
   <h3>Videographer: <%= @legal_contract.videographer %></h3>
@@ -10,12 +11,14 @@
   <h3>Recording Venue: <%= @legal_contract.recording_venue %></h3>
   <h3>Deposition/Patent Filing Due Date: <%= @legal_contract.due_date %></h3>
 
-  <% if @legal_contract.active %>
-    <button type="button" class="btn btn-default">Active</button>
-    </h3><button type="button" class="btn btn-success">Done!</button>
-  <% else %>
-    </h3><button type="button" class="btn btn-success">Done!</button>
-  <% end %>
+  <h4>Click To Change Job Status  
+    <% if @legal_contract.active %> 
+    <%= link_to "In Progress", "/legal-docs/#{@legal_contract.id}/toggle", class: "btn btn-default" %>
+    <% else %> 
+    <%= link_to "Complete!", "/legal-docs/#{@legal_contract.id}/toggle", class: "btn btn-success" %>
+    <% end %>
+  </h4> 
+  <br>
 </div>
   <br>
 </section>

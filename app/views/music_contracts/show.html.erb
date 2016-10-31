@@ -1,5 +1,6 @@
 <section>
-  <h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-info" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+<div class="container">
+  <h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
   <h2>Current Music Document</h2>
   <h3>Musician: <%= @music_contract.musician %></h3>
@@ -10,12 +11,13 @@
   <h3>Notes: <%= @music_contract.notes %></h3>
   <h3>Gig Due Date: <%= @music_contract.due_date %></h3>
 
-  <% if @music_contract.active %>
-    <button type="button" class="btn btn-default">Active</button>
-    </h3><button type="button" class="btn btn-success">Done!</button>
-  <% else %>
-    </h3><button type="button" class="btn btn-success">Done!</button>
-  <% end %>
+  <h4>Click To Change Job Status  
+    <% if @music_contract.active %> 
+    <%= link_to "In Progress", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-default" %>
+    <% else %> 
+    <%= link_to "Complete!", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-success" %>
+    <% end %>
+  </h4> 
 </div>
   <br>
 </section>

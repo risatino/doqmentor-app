@@ -55,6 +55,19 @@ class LegalContractsController < ApplicationController
     redirect_to "/legal-docs/#{@legal_contract.id}"  
   end
 
+  def toggle
+    @contract = LegalContract.find(params[:id])
+
+    if @contract.active == false
+      @contract.update(active: true)
+    else
+      @contract.update(active: false)
+    end
+
+    redirect_to "/legal-docs/#{@contract.id}"
+
+  end
+
   def destroy
     @legal_contract = LegalContract.find(params[:id])
     @legal_contract.destroy
