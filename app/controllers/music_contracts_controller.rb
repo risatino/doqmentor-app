@@ -52,6 +52,19 @@ class MusicContractsController < ApplicationController
     redirect_to "/music-docs/#{@music_contract.id}"  
   end
 
+  def toggle
+    @contract = MusicContract.find(params[:id])
+
+    if @contract.active == false
+      @contract.update(active: true)
+    else
+      @contract.update(active: false)
+    end
+
+    redirect_to "/music-docs/#{@contract.id}"
+
+  end
+
   def destroy
     @music_contract = MusicContract.find(params[:id])
     @music_contract.destroy

@@ -1,6 +1,6 @@
 <section>
 <div class="container">
-  <h2><%= link_to 'See Design Contracts', '/design-docs', class: "btn btn-info" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <h2><%= link_to 'See Design Contracts', '/design-docs', class: "btn btn-default" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
   <h2>Design Contract Number #<%= @design_contract.id %></h2>
   <h3>Designer: <%= @design_contract.designer %></h3>
@@ -10,17 +10,14 @@
   <h3>Gig Due Date: <%= @design_contract.due_date %></h3>
   <h3>Project Specs: <%= @design_contract.specs %></h3>
 
-  <%= link_to "Gig Status", "/design-docs/#{@design_contract.id}/toggle" %>
-
-  <h4>Job Status: 
+  <h4>Click To Change Job Status  
     <% if @design_contract.active %> 
-    currently in progress...
+    <%= link_to "In Progress", "/design-docs/#{@design_contract.id}/toggle", class: "btn btn-default" %>
     <% else %> 
-    gig completed!
+    <%= link_to "Complete!", "/design-docs/#{@design_contract.id}/toggle", class: "btn btn-success" %>
     <% end %>
-  </h4> 
-
-
+  </h4>
+   
   <br>
 </div>
   <br>

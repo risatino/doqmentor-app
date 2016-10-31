@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/music-docs/:id' => 'music_contracts#show'
   get '/music-docs/:id/edit' => 'music_contracts#edit'
   patch '/music-docs/:id' => 'music_contracts#update'
+  get '/music-docs/:id/toggle' => 'music_contracts#toggle'
   delete '/music-docs/:id' => 'music_contracts#destroy'
 
   get '/legal-docs' => 'legal_contracts#index'
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
   get '/legal-docs/:id' => 'legal_contracts#show'
   get '/legal-docs/:id/edit' => 'legal_contracts#edit'
   patch '/legal-docs/:id' => 'legal_contracts#update'
+  get '/legal-docs/:id/toggle' => 'legal_contracts#toggle'
   delete '/legal-docs/:id' => 'legal_contracts#destroy'
 
   get '/signup' => 'users#new'
