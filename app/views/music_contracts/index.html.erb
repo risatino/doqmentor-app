@@ -1,5 +1,6 @@
 <section>
-<h2><%= link_to 'See Music Contracts', '/music-docs',  class: "btn btn-info" %> <%= link_to 'New Music Contract', '/music-docs/new', class: "btn btn-info" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
+<div class="container">
+<h2><%= link_to 'See Music Contracts', '/music-docs',  class: "btn btn-default" %> <%= link_to 'New Music Contract', '/music-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
 <br>
 <h2>Existing Music Contracts</h2>
 <% @music_contracts.each do |music_contract| %>
@@ -9,5 +10,15 @@
   <h3>Event Venue: <%= music_contract.event_venue %></h3>
   <h3>Notes: <%= music_contract.notes %></h3>
   <h3>Gig Due Date: <%= music_contract.due_date %></h3>
+  <h4>Billable Hours: <%= music_contract.billable_hours %> </h4>
+  <h4>Job Status: 
+    <% if music_contract.active %> 
+    currently in progress...
+    <% else %> 
+    gig completed!
+    <% end %>
+  </h4>
+  <br>
 <% end %>
+</div>
 </section>

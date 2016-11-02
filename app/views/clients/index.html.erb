@@ -1,12 +1,15 @@
 <section>
-<h2><%= link_to 'Design Gig Contracts', '/design-docs', class: "btn btn-info" %> <%= link_to 'Music Gig Contracts', '/music-docs', class: "btn btn-info" %> <%= link_to 'Legal Deposition/Patent Contracts', '/legal-docs', class: "btn btn-info" %> <%= link_to 'Add New Client', '/clients/new', class: "btn btn-info" %></h2>
+<div class="container">
+<h2><%= link_to 'Design Gig Contracts', '/design-docs', class: "btn btn-default" %> <%= link_to 'Music Gig Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to 'Legal Deposition/Patent Contracts', '/legal-docs', class: "btn btn-default" %> <%= link_to 'Add New Client', '/clients/new', class: "btn btn-info" %></h2>
 <h2>Showing All Clients</h2>
 
 <% @clients.each do |client| %>
-  <h2>Client: <a href="/clients/<%= client.id %>"><%= client.name %></a></h2>
-  <h2>Address: <%= client.address %></h2>
-  <h2>Phone: <%= client.phone %></h2>
-  <h2>Email: <%= client.email %></h2>
-  <h2>Bio: <%= client.notes %></h2>
+  <h3>Client: <a href="/clients/<%= client.id %>"><%= client.name %></a></h3>
+  <h3>Address: <%= client.address %></h3>
+  <h3>Phone: <%= client.phone %></h3>
+  <h3>Email: <%= client.email %></h3>
+  <h3>Bio: <%= client.notes %></h3>
+  <br>
 <% end %>
+</div>
 </section>

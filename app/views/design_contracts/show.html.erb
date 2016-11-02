@@ -1,6 +1,6 @@
 <section>
 <div class="container">
-  <h2><%= link_to 'Back To Home Page', '/design-docs', class: "btn btn-info" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <h2><%= link_to 'See Design Contracts', '/design-docs', class: "btn btn-default" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
   <h2>Design Contract Number #<%= @design_contract.id %></h2>
   <h3>Designer: <%= @design_contract.designer %></h3>
@@ -9,7 +9,17 @@
   <h3>Project Title: <a href="/design-docs/<%= @design_contract.id %>"><%= @design_contract.title %> <%= @design_contract.gig_name %></a></h3>
   <h3>Gig Due Date: <%= @design_contract.due_date %></h3>
   <h3>Project Specs: <%= @design_contract.specs %></h3>
+
+  <h4>Click To Change Job Status  
+    <% if @design_contract.active %> 
+    <%= link_to "In Progress", "/design-docs/#{@design_contract.id}/toggle", class: "btn btn-default" %>
+    <% else %> 
+    <%= link_to "Complete!", "/design-docs/#{@design_contract.id}/toggle", class: "btn btn-success" %>
+    <% end %>
+  </h4>
+  <br>
 </div>
+  <br>
 </section>
 
 <!-- // test view // -->
@@ -36,7 +46,7 @@
   <br>
     <ul>Document(s) may be used only for the purposes stated by client. All other use(s) and modification(s) is (are) prohibited. Document(s) may not be copied without the Developer’s permission and any physical documents must be returned after use.</ul>
   <br>
-    <ul>Estimated Billable Hours $<%= @design_contract.billable_hours %></ul>
+    <ul>Estimated Billable Hours: <%= @design_contract.billable_hours %></ul>
   <br>
     <ul>**Agreement to be paid in USD Cash or Check Only (Paypal Payments Include Additional 7% Tax To Total)</ul>
     <ul>Time for Payment; each payment is payable upon the Client’s acceptance of Deliverables. All invoices are payable within 7 business days of receipt. A 1.5% monthly service charge is payable on all overdue balances. The grant of any license or right of copyright is conditioned on receipt of full payment. The Client shall assume responsibility for all collection of legal fees necessitated by default in payment. If this form is used for an estimate or assignment confirmation, the fees and expenses shall be shown when invoice is rendered. The Client’s approval shall be obtained for any increases in fees or expenses shall be shown when invoice is rendered. The Client’s approval shall be obtained for any increases in fees or expenses that exceed the original estimate by 25% or more. The Developer shall inform the Client promptly by telephone or email upon discovery of any event or problem that may significantly delay the development of the work. The Client shall be responsible for making additional payments for changes requested by the Client in original assignment. However, no additional payment shall be made for changes required to conform to the original assignment description. The Client shall offer the Developer the first opportunity to make any changes. At this time, this invoice does not include any agreement on project estimate.</ul>

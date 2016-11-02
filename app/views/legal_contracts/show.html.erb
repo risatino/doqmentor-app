@@ -1,14 +1,26 @@
 <section>
-<h2><%= link_to 'Back To Home Page', '/legal-docs', class: "btn btn-info" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
-<br>
-<h2>Current Legal Contract</h2>
-<h3>Videographer: <%= @legal_contract.videographer %></h3>
-<h3>Hiring Attorney: <%= @legal_contract.hiring_attorney %></h3>
-<h3>Unique Job ID: <a href="/legal-docs/<%= @legal_contract.id %>"><%= @legal_contract.ticket_name %></a></h3>
-<h3>Firm: <%= @legal_contract.firm %></h3>
-<h3>Witness: <%= @legal_contract.witness %></h3>
-<h3>Recording Venue: <%= @legal_contract.recording_venue %></h3>
-<h3>Deposition/Patent Filing Due Date: <%= @legal_contract.due_date %></h3>
+<div class="container">
+  <h2><%= link_to 'See Legal Contracts', '/legal-docs', class: "btn btn-default" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <br>
+  <h2>Current Legal Contract</h2>
+  <h3>Videographer: <%= @legal_contract.videographer %></h3>
+  <h3>Hiring Attorney: <%= @legal_contract.hiring_attorney %></h3>
+  <h3>Unique Job ID: <a href="/legal-docs/<%= @legal_contract.id %>"><%= @legal_contract.ticket_name %></a></h3>
+  <h3>Firm: <%= @legal_contract.firm %></h3>
+  <h3>Witness: <%= @legal_contract.witness %></h3>
+  <h3>Recording Venue: <%= @legal_contract.recording_venue %></h3>
+  <h3>Deposition/Patent Filing Due Date: <%= @legal_contract.due_date %></h3>
+
+  <h4>Click To Change Job Status  
+    <% if @legal_contract.active %> 
+    <%= link_to "In Progress", "/legal-docs/#{@legal_contract.id}/toggle", class: "btn btn-default" %>
+    <% else %> 
+    <%= link_to "Complete!", "/legal-docs/#{@legal_contract.id}/toggle", class: "btn btn-success" %>
+    <% end %>
+  </h4> 
+  <br>
+</div>
+  <br>
 </section>
 
 <!-- // test view // -->
@@ -32,7 +44,7 @@
     <p>My name is <%= @legal_contract.videographer %>, legal video specialist</p>
     <p>The primary court reporter is <%= @legal_contract.hiring_attorney %>, I am in association with <%= @legal_contract.firm %> and Legal View Court Reporting and Video, Inc.</p>
     <p>For the record, would counsel please introduce themselves and who they represent?</p>
-      <ul>(pause for appearances)</ul>
+    <p>(pause for appearances)</p>
     <p>The court reporter will now swear in the witness.</p>
     <p> <%= @legal_contract.witness %>, Witness ___________________________</p>
     <p>CASE #: <%= @legal_contract.ticket_name %></p>
@@ -64,7 +76,6 @@
       <ul>*Give them the correct spelulng of your full name and get their name</ul>
       <ul>*Ask them if they want a headphone ulne - tell them you can adjust their volume, if too loud</ul>
       <ul>*Ask them if they want a copy of the the audio in digital form (to be recorded during the deposition)</ul>
-  <br>
       <ul>**Shipping Info Notes: Legal View, Inc. and <%= @legal_contract.videographer %>(Assigned Legal Videographer) does production.</ul>
   <br>
     <p>I hereby acknowledge that by executing this order form I agree to pay the invoice submitted by Legal View, Inc., within the payment terms provided thereon for services requested and which have been rendered in the matter named above regardless of settlement, retraction, or other cessation of litigation.</p>

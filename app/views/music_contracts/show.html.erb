@@ -1,14 +1,25 @@
 <section>
-<h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-info" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-warning", method: :delete %></h2>
-<br>
-<h2>Current Music Document</h2>
-<h3>Musician: <%= @music_contract.musician %></h3>
-<h3>Client: <%= @music_contract.client %></h3>
-<h3>Unique ID: <%= @music_contract.gig_name %></h3>
-<h3>Project Title: <a href="/music-docs/<%= @music_contract.id %>"><%= @music_contract.title %> <%= @music_contract.gig_name %></a></h3>
-<h3>Event Venue: <%= @music_contract.event_venue %></h3>
-<h3>Notes: <%= @music_contract.notes %></h3>
-<h3>Gig Due Date: <%= @music_contract.due_date %></h3>
+<div class="container">
+  <h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <br>
+  <h2>Current Music Document</h2>
+  <h3>Musician: <%= @music_contract.musician %></h3>
+  <h3>Client: <%= @music_contract.client %></h3>
+  <h3>Unique ID: <%= @music_contract.gig_name %></h3>
+  <h3>Project Title: <a href="/music-docs/<%= @music_contract.id %>"><%= @music_contract.title %> <%= @music_contract.gig_name %></a></h3>
+  <h3>Event Venue: <%= @music_contract.event_venue %></h3>
+  <h3>Notes: <%= @music_contract.notes %></h3>
+  <h3>Gig Due Date: <%= @music_contract.due_date %></h3>
+
+  <h4>Click To Change Job Status  
+    <% if @music_contract.active %> 
+    <%= link_to "In Progress", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-default" %>
+    <% else %> 
+    <%= link_to "Complete!", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-success" %>
+    <% end %>
+  </h4> 
+  <br>
+</div>
 </section>
 
 <!-- test view -->
@@ -33,7 +44,7 @@
   <br>
     <ul>Music Document(s) may be used only for the purposes stated by Booking Agent. All other use(s) and modification(s) is (are) prohibited. Music Document(s) may not be copied without the DJ/Musician’s permission and any physical documents must be returned after use.</ul>
   <br>
-    <ul>Estimated Billable Hours $<%= @music_contract.billable_hours %></ul>
+    <ul>Estimated Billable Hours: <%= @music_contract.billable_hours %></ul>
   <br>
     <ul>**Agreement to be paid in USD Cash or Check Only (Paypal Payments Include Additional 7% Tax To Total)</ul>
     <ul>**Each payment is payable upon the Booking Agent’s acceptance of Deliverables. All invoices are payable within 7 business days of receipt with a $150 security deposit or 25% of any total balance for any Wedding DJ/ Musician gig over $200. The grant of any license or right of copyright is conditioned on receipt of full payment. The Booking Agent shall assume responsibility for all collection of legal fees necessitated by default in payment. The Booking Agent’s approval shall be obtained for any increases in fees or expenses shall be shown when invoice is rendered. The Booking Agent’s approval shall be obtained for any increases in fees or expenses that exceed the original estimate by 25% or more. The DJ/Musician shall inform the Booking Agent promptly by telephone or email upon discovery of any event or problem that may significantly delay the development of the work. The Booking Agent shall be responsible for making additional payments for changes requested by the Booking Agent in original assignment. However, no additional payment shall be made for changes required to conform to the original assignment description. The Booking Agent shall offer the DJ/Musician the first opportunity to make any changes. At this time, this invoice does not include any agreement on project estimate and does not include an expected tip based on quality of service, entertainment, or final product.</ul>

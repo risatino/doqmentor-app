@@ -1,5 +1,6 @@
 <section>
-<h2><%= link_to 'Legal Contracts', '/legal-docs',  class: "btn btn-info" %> <%= link_to 'New Legal Contract', '/legal-docs/new', class: "btn btn-info" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
+<div class="container">
+<h2><%= link_to 'Legal Contracts', '/legal-docs',  class: "btn btn-default" %> <%= link_to 'New Legal Contract', '/legal-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
 <br>
 <h2>Existing Legal Contracts</h2>
   <% @legal_contracts.each do |legal_contract| %>
@@ -10,5 +11,15 @@
     <h3>Recording Venue: <%= legal_contract.recording_venue %></h3>
     <h3>Witness: <%= legal_contract.witness %></h3>
     <h3>Deposition/Patent Filing Due Date: <%= legal_contract.due_date %></h3>
+    <h4>Billable Hours: <%= legal_contract.billable_hours %> </h4>
+    <h4>Job Status: 
+      <% if legal_contract.active %> 
+      currently in progress...
+      <% else %> 
+      gig completed!
+      <% end %>
+    </h4>
+    <br>  
   <% end %>
+ </div> 
 </section>

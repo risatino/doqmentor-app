@@ -16,7 +16,8 @@ class MusicContractsController < ApplicationController
                                            title: params[:title],
                                            event_venue: params[:event_venue],
                                            notes: params[:notes],
-                                           due_date: params[:due_date])
+                                           due_date: params[:due_date],
+                                           billable_hours: params[:billable_hours])
     
     if @music_contract.save
       flash[:success] = "Your document has been created"
@@ -43,11 +44,25 @@ class MusicContractsController < ApplicationController
                            title: params[:title],
                            event_venue: params[:event_venue],
                            notes: params[:notes],
-                           due_date: params[:due_date])
+                           due_date: params[:due_date],
+                           billable_hours: params[:billable_hours])
 
 
     flash[:success] = "Your contract has been updated."
     redirect_to "/music-docs/#{@music_contract.id}"  
+  end
+
+  def toggle
+    @contract = MusicContract.find(params[:id])
+
+    if @contract.active == false
+      @contract.update(active: true)
+    else
+      @contract.update(active: false)
+    end
+
+    redirect_to "/music-docs/#{@contract.id}"
+
   end
 
   def destroy

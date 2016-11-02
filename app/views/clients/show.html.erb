@@ -1,5 +1,6 @@
 <section>
-<h2><%= link_to 'Back To Home Page', '/clients', class: "btn btn-info" %> <%= link_to "Edit", "/clients/#{@client.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/clients/#{@client.id}", class: "btn btn-warning", method: :delete %></h2>
+<div class="container">
+<h2><%= link_to 'Back To Home Page', '/clients', class: "btn btn-default" %> <%= link_to "Edit", "/clients/#{@client.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/clients/#{@client.id}", class: "btn btn-warning", method: :delete %></h2>
 <br>
 <h2>User Client</h2>
 <h3>Name: <a href="/clients/<%= @client.id %>"><%= @client.name %></a></h3>
@@ -7,4 +8,5 @@
 <h3>Company Address: <%= @client.address %></h3>
 <h3>Phone Number: <%= @client.phone %></h3>
 <h3>Notes: <%= @client.notes %></h3>
+</div>
 </section>
