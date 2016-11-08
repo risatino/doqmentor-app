@@ -30,7 +30,7 @@
   <br>
     <ul>Graphic Designer || <%= @design_contract.designer %></ul>
     <br>
-    <ul><h4>Signature of <%= @design_contract.designer %>:</h4></ul>
+    <ul>Signature of <%= @design_contract.designer %>:</ul>
     <ul><%= @design_contract.freelance_signature %></ul>
 
     <ul>Address Payments To: <%= @design_contract.designer %></ul>
@@ -38,11 +38,11 @@
     <ul>payments@gmail.com | (800) 600-3333</ul>
   <br>
     <ul>Design Contract Number #<%= @design_contract.gig_name %></ul>
-    <ul>"<%= @design_contract.title %>" Specs: Produce <%= @design_contract.specs %></ul>
+    <ul>"<%= @design_contract.title %>" Specs: <%= @design_contract.specs %></ul>
   <br>
-    <ul>Client | <%= @design_contract.client %></ul>
+    <ul>Client Approval | <%= @design_contract.client %></ul>
   <br>
-    <ul>Signatures: _________________________</ul>
+    <ul>Signature: _________________________</ul>
   <br>
     <ul>#<%= @design_contract.gig_name %> To Be Completed By: <%= @design_contract.due_date %></ul>
   <br>
