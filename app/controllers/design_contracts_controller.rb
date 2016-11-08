@@ -38,6 +38,8 @@ class DesignContractsController < ApplicationController
   end
 
   def update
+    p params[:freelance_signature]
+    p "******************"
     @design_contract = DesignContract.find(params[:id])
     @design_contract.update(designer: params[:designer],
                             client: params[:client],
