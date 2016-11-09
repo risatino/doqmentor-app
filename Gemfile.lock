@@ -46,11 +46,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-<<<<<<< HEAD
-    byebug (9.0.6)
-=======
     byebug (9.0.5)
->>>>>>> e2a397e3453738459425674563bc143a08fb5e3c
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -95,10 +91,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-<<<<<<< HEAD
-=======
       pkg-config (~> 1.1.7)
->>>>>>> e2a397e3453738459425674563bc143a08fb5e3c
     paperclip (5.0.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)

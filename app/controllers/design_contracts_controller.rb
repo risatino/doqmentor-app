@@ -78,7 +78,7 @@ class DesignContractsController < ApplicationController
   end
 
   def document_params
-    params.require(:document).permit(:signature)  
+    params.require(:document).permit(:freelance_signature)  
   end
 
 end

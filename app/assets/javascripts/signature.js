@@ -12,10 +12,17 @@ $(document).on('turbolinks:load', function(){
     canvas.width = canvas.offsetWidth;
     window.onresize = resizeCanvas(canvas);
     resizeCanvas(canvas);
-    signature_pad = new SignaturePad(canvas);
+    var signature_pad = new SignaturePad(canvas);
+    console.log(signature_pad);
     $('.signature_pad_clear').click(function() { signature_pad.clear()});
     $('.signature_pad_save').click(function(event){
-      $('.signature_pad_input').val(signature_pad.toDataURL());
+      if (signature_pad.isEmpty()){
+         alert('You must sign to accept the Terms and Conditions');
+         event.preventDefault();
+      } else {
+      console.log(signature_pad.toDataURL());
+        $('.signature_pad_input').val(signature_pad.toDataURL());
+      }  
     });
   }
 });
