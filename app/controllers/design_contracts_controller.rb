@@ -81,4 +81,9 @@ class DesignContractsController < ApplicationController
     params.require(:document).permit(:freelance_signature)  
   end
 
+  def cart_count
+    @design_contracts = DesignContract.all
+    p DesignContract.where(:active => true).count 
+  end
+
 end
