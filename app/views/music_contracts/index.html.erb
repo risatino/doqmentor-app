@@ -2,7 +2,14 @@
 <div class="container">
 <h2><%= link_to 'See Music Contracts', '/music-docs',  class: "btn btn-default" %> <%= link_to 'New Music Contract', '/music-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
 <br>
-<h2>Existing Music Contracts</h2>
+<% active = 0 %>
+<% @music_contracts.each do |contract| %>
+  <% if contract.active %>
+  <% active += 1 %>
+  <% end %>
+<% end %>
+<h2><%= active %> Active Music Contracts</h2>
+
 <% @music_contracts.each do |music_contract| %>
   <h3>Musician: <%= music_contract.musician %></h3>
   <h3>Client: <%= music_contract.client %></h3>
