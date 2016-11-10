@@ -9,4 +9,5 @@ class DesignContract < ApplicationRecord
       t.timestamps
     end
   end
+
 end
