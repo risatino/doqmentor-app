@@ -56,7 +56,28 @@
             <% end %>
             <li class="divider"></li>
             <li>
-              <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> Gigs(#{@cart_count})".html_safe, "/gigs" %>
+            
+            <% @active = 0 %>
+
+            <% @design_contracts.each do |contract| %>
+              <% if contract.active %>
+              <% @active += 1 %>
+              <% end %>
+            <% end %>
+
+            <% @legal_contracts.each do |contract| %>
+              <% if contract.active %>
+              <% @active += 1 %>
+              <% end %>
+            <% end %>
+
+            <% @music_contracts.each do |contract| %>
+              <% if contract.active %>
+              <% @active += 1 %>
+              <% end %>
+            <% end %>
+
+              <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> Gigs (#{@active})".html_safe, "/active_contracts" %>
             </li>
           </ul>
         </li>

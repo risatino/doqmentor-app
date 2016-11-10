@@ -2,7 +2,16 @@
 <div class="container">
 <h2><%= link_to 'Legal Contracts', '/legal-docs',  class: "btn btn-default" %> <%= link_to 'New Legal Contract', '/legal-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
 <br>
-<h2>Existing Legal Contracts</h2>
+
+<% active = 0 %>
+<% @legal_contracts.each do |contract| %>
+  <% if contract.active %>
+  <% active += 1 %>
+  <% end %>
+<% end %>
+
+<h2><%= active %> Active Legal Contracts</h2>
+
   <% @legal_contracts.each do |legal_contract| %>
     <h3>Videographer: <%= legal_contract.videographer %></h3>
     <h3>Hiring Attorney: <%= legal_contract.hiring_attorney %></h3>
