@@ -2,7 +2,7 @@ class LegalContractsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @legal_contracts = LegalContract.all
+
   end
 
   def new

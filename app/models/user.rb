@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :music_contracts, through: :gigs
   has_many :legal_contracts, through: :gigs
   has_many :images
+
+  def currently_carted
+    active_contracts.where(:active => true)
+  end
 end

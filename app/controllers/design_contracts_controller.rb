@@ -2,7 +2,7 @@ class DesignContractsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @design_contracts = DesignContract.all
+ 
   end
 
   def new
