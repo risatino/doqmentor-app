@@ -28,21 +28,20 @@
   <br>
   <br>
   <br>
-    <ul>DJ/Musician Contract | <%= @music_contract.musician %></ul>
-    <br>
-    <ul>Signature: __________________________</ul>
-    <ul>Address Payments To: <%= @music_contract.musician %></ul>
+    <ul><b>DJ/MUSICIAN CONTRACT</b> <%= @music_contract.musician %></ul>
+    <ul><h4><font color="#339933"><b>Approved!</b></font>  <%= image_tag("hanko.jpg", size: "40x40", :alt => "logo stamp") %></h4></ul>
+    <ul>Payments To: <%= @music_contract.musician %></ul>
     <ul>2863 West 21st Place, Chicago, IL 60622</ul>
-    <ul>payments@gmail.com | (800) 600-3333</ul>
+    <ul>payments@gmail.com <b>|</b> (800) 600-3333</ul>
   <br>
-    <ul>MusicContract Number #<%= @music_contract.gig_name %></ul>
+    <ul>Music Contract Number #<%= @music_contract.gig_name %></ul>
+    <ul><b>"<%= @music_contract.title %>" SPECIAL NOTES:</b> <%= @music_contract.notes %></ul>
   <br>
-    <ul>"<%= @music_contract.title %>" SPECIAL NOTES: <%= @music_contract.notes %></ul>
-    <ul>Booking Agent | <%= @music_contract.client %> | Signature: _________________________</ul>
+    <ul><b>BOOKING AGENT</b> <%= @music_contract.client %> | Signature: _________________________</ul>
     <ul>#<%= @music_contract.gig_name %> Event Booked On: <%= @music_contract.due_date %></ul>
-    <ul>Event Venue: <%= @music_contract.event_venue %></ul>
+    <ul>EVENT VENUE: <%= @music_contract.event_venue %></ul>
   <br>
-    <ul>Music Document(s) may be used only for the purposes stated by Booking Agent. All other use(s) and modification(s) is (are) prohibited. Music Document(s) may not be copied without the DJ/Musician’s permission and any physical documents must be returned after use.</ul>
+    <ul><em>Music Document(s) may be used only for the purposes stated by Booking Agent. All other use(s) and modification(s) is (are) prohibited. Music Document(s) may not be copied without the DJ/Musician’s permission and any physical documents must be returned after use.</em></ul>
   <br>
     <ul>Estimated Billable Hours: <%= @music_contract.billable_hours %></ul>
   <br>
