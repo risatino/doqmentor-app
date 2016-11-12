@@ -28,19 +28,16 @@
   <br>
   <br>
   <br>
-    <ul>Graphic Designer || <%= @design_contract.designer %></ul>
-    <br>
-    <ul>Signature of <%= @design_contract.designer %>:</ul>
-    <ul><%= @design_contract.freelance_signature %></ul>
-
+    <ul><b>GRAPHIC DESIGNER</b> <%= @design_contract.designer %></ul>
+    <ul><h4><font color="#339933"><b>Approved!</b></font>  <%= image_tag("hanko.jpg", size: "40x40", :alt => "logo stamp") %></h4></ul>
     <ul>Address Payments To: <%= @design_contract.designer %></ul>
     <ul>2863 West 21st Place, Chicago, IL 60622</ul>
-    <ul>payments@gmail.com | (800) 600-3333</ul>
+    <ul>payments@gmail.com <b>|</b> (800) 600-3333</ul>
   <br>
     <ul>Design Contract Number #<%= @design_contract.gig_name %></ul>
     <ul>"<%= @design_contract.title %>" Specs: <%= @design_contract.specs %></ul>
   <br>
-    <ul>Client Approval | <%= @design_contract.client %></ul>
+    <ul><b>CLIENT</b> | <%= @design_contract.client %></ul>
   <br>
     <ul>Signature: _________________________</ul>
   <br>
