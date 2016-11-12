@@ -1,15 +1,16 @@
 <section>
 <div class="container">
-<h2><%= link_to 'Design Gig Contracts', '/design-docs', class: "btn btn-default" %> <%= link_to 'Music Gig Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to 'Legal Deposition/Patent Contracts', '/legal-docs', class: "btn btn-default" %> <%= link_to 'Add New Client', '/clients/new', class: "btn btn-info" %></h2>
-<h2>Showing All Clients</h2>
-
-<% @clients.each do |client| %>
-  <h3>Client: <a href="/clients/<%= client.id %>"><%= client.name %></a></h3>
-  <h3>Address: <%= client.address %></h3>
-  <h3>Phone: <%= client.phone %></h3>
-  <h3>Email: <%= client.email %></h3>
-  <h3>Bio: <%= client.notes %></h3>
+  <h4>The DOQmentor is a web application that helps self-employed freelancers manage PDFs for design, music, and legal contracts. Users collect client data and projects based on current activity, completed gigs, and a project timeline of jobs to be completed. This service allows freelancers to better manage their workflow, contracts, and gigs.</h4>
+  <h2><%= link_to 'Design Gig Contracts', '/design-docs', class: "btn btn-default" %> <%= link_to 'Music Gig Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to 'Legal Deposition/Patent Contracts', '/legal-docs', class: "btn btn-default" %> <%= link_to 'Add New Client', '/clients/new', class: "btn btn-info" %></h2>
+<br>
+<h2>Client Address Book</h2>
+  <% @clients.each do |client| %>
+    <h3>Client: <a href="/clients/<%= client.id %>"><%= client.name %></a></h3>
+    <h3>Address: <%= client.address %></h3>
+    <h3>Phone: <%= client.phone %></h3>
+    <h3>Email: <%= client.email %></h3>
+    <h3>Bio: <%= client.notes %></h3>
   <br>
-<% end %>
+  <% end %>
 </div>
 </section>

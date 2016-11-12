@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
   <head>
-  <title>The DOQmentor</title>
+  <title>DOQmentor</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
@@ -25,7 +25,6 @@
       <ul class="nav navbar-nav">
         <li><h1>The DOQmentor</h1></li>
       </ul>
-
       <ul class="nav navbar-nav navbar-right black-text">
 
         <li class="dropdown">
@@ -33,7 +32,7 @@
           <ul class="dropdown-menu" role="menu">
               <li><a href="/clients/new">Add New Client</a></li>
             <li class="divider"></li>
-            
+           
             
             <% if current_user && current_user.admin %>
               <li><%= link_to "New Design Gig", "/design-doc/new", class: "btn btn-default" %></li>
@@ -82,12 +81,17 @@
           </ul>
         </li>
       </ul>
+       <ul class="nav nav-tabs navbar-right">
+        <li role="presentation" class="active"><a href="/">Home</a></li>
+        <li role="presentation"><a href="#">Resources</a></li>
+        <li role="presentation"><a href="#">Contact Me</a></li>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
-</header>
-<div class="container-fluid">
+    </nav>
+    </header>
+  <div class="container-fluid">
 <%= yield %>
-</div>
+  </div>
 </body>
 </html>
