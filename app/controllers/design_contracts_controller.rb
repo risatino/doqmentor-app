@@ -38,7 +38,7 @@ class DesignContractsController < ApplicationController
   end
 
   def update
-    p params[:freelance_signature]
+    p params[:client_signature]
     p "******************"
     @design_contract = DesignContract.find(params[:id])
     @design_contract.update(designer: params[:designer],
@@ -78,7 +78,7 @@ class DesignContractsController < ApplicationController
   end
 
   def document_params
-    params.require(:document).permit(:freelance_signature)  
+    params.require(:document).permit(:client_signature)  
   end
 
   def cart_count
