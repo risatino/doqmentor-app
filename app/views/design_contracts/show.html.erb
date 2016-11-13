@@ -38,7 +38,8 @@
   <br>
     <ul><b>CLIENT</b> | <%= @design_contract.client %></ul>
   <br>
-    <ul>Signature: <em><%= @design_contract.signature %></em></ul>
+    <ul>Signature: </ul>
+    <%= image_tag @design_contract.signature.url %>
   <br>
     <ul>#<%= @design_contract.gig_name %> To Be Completed By: <%= @design_contract.due_date %></ul>
   <br>

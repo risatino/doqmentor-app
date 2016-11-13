@@ -58,19 +58,18 @@
         <% hidden_field_tag :client_id %>
       </div>
       <br>
-        <%= hidden_field_tag :signature, class: 'signature_pad_input' %>
-      <div class="signature_pad text-center">
-        <div class="signature_pad_body">
-          <canvas></canvas>
+        <%= hidden_field_tag :signature, '', class: 'signature_pad_input' %>
+        <div class="signature_pad text-center">
+          <div class="signature_pad_body">
+            <canvas></canvas>
+          </div>
+          <div class="signature_pad_footer">
+            <div class="text-muted">Sign above</div>
+            <button type="button" class="btn btn-default signature_pad_clear">Clear</button>
+            <%= submit_tag 'Submit Document Updates', class: 'btn btn-success signature_pad_save'  %>
+          </div>
         </div>
-        <div class="signature_pad_footer">
-          <div class="text-muted">Approved by <%= @design_contract.client %></div>
-          <button type="button" class="btn-btn-default signature_pad_clear">clear</button>
-          <button type="button" class="btn-btn-default signature_pad_save">Add signature</button>
-        </div>
-      </div>
       <br>
-        <%= submit_tag "Submit Document Updates" %>
         <% end %>
       <br>
     <div>

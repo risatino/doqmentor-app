@@ -1,5 +1,5 @@
 <div class="container">
-<%= form_for @lead, url: '/leads', html: { multipart: true } do |f| %>
+<%= form_for @lead, html: { multipart: true } do |f| %>
   <% if lead.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(lead.errors.count, "error") %> prohibited this lead from being saved:</h2>
@@ -39,12 +39,11 @@
 
   <div class="field">
     <%= f.label :logo %>
-    <%= f.file_field :logo %>
+    <%= f.file_field :logo %>k
   </div>
-
-  <div class="actions">
-    <%= f.submit 'Create New Lead' %>
-  </div>
-
 <br>
-</div>
+  <div class="actions">
+    <%= f.submit 'Save' %>
+  </div>
+
+ <% end %> 

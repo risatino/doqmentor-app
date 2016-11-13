@@ -1,5 +1,5 @@
 <div class="container">
-<%= form_for @design_contract, url: '/design-docs', html: { multipart: true } do |f| %>
+<%= form_for @design_contract, html: { multipart: true } do |f| %>
   <% if design_contract.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(design_contract.errors.count, "error") %> prohibited this design_contract from being saved:</h2>
@@ -47,13 +47,6 @@
     <%= f.text_field :billable_hours %>
   </div>
 
-  <div class="field">
-    <%= f.label :signature %>
-    <%= f.file_field :signature %>
-  </div>
-
-    <%= f.hidden_field :signature %>
-
   <br>
     <%= f.hidden_field :signature, class: 'signature_pad_input' %>
   <div class="signature_pad text-center">
@@ -63,13 +56,11 @@
     <div class="signature_pad_footer">
       <div class="text-muted">Approved by <%= @design_contract.client %></div>
       <button type="button" class="btn-btn-default signature_pad_clear">clear</button>
-      <button type="button" class="btn-btn-default signature_pad_save">save signature</button>
     </div>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Create New Contract', class:"btn btn-success" %>
+    <%= f.submit 'Create New Contract' %>
   </div>
 
-<br>
-</div>
+<% end %> 

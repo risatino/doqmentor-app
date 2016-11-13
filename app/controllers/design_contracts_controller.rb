@@ -61,7 +61,7 @@ class DesignContractsController < ApplicationController
   # end
 
   def design_contract_params
-    params.require(:design_contact).permit(:designer, :client, :gig_name, :title, :due_date, :specs, :billable_hours, :active, :signature)  
+    params.permit(:designer, :client, :gig_name, :title, :due_date, :specs, :billable_hours, :active, :signature)  
   end
 
   def cart_count

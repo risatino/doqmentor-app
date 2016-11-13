@@ -9,13 +9,7 @@ Rails.application.routes.draw do
   patch '/clients/:id' => 'clients#update'
   delete '/clients/:id' => 'clients#destroy'
 
-  get '/leads' => 'leads#index'
-  get '/leads/new' => 'leads#new'
-  post '/leads' => 'leads#create'
-  get '/leads/:id' => 'leads#show'
-  get '/leads/:id/edit' => 'leads#edit'
-  patch '/leads/:id' => 'leads#update'
-  delete '/leads/:id' => 'leads#destroy'
+  resources :leads
 
   get '/design-docs' => 'design_contracts#index'
   get '/design-docs/new' => 'design_contracts#new'

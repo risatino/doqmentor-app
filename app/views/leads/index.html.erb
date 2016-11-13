@@ -24,7 +24,7 @@
         <td><%= lead.phone %></td>
         <td><%= lead.company %></td>
         <td><%= link_to 'Show', "/leads/#{lead.id}" %></td>
-        <td><%= link_to 'Edit', "/leads/#{lead.id}/edit" %></td>
+        <td><%= link_to 'Edit', "/leads/#{lead.id}" %></td>
         <td><%= link_to 'Destroy', "/leads/#{lead.id}", method: :delete %></td>
       </tr>
     <% end %>
