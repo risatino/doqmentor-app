@@ -1,3 +1,15 @@
+<h2>Customize Design Contract:</h2>
+<%= render 'form', design_contract: @design_contract %>
+
+<%= link_to 'Back', leads_path %>
+
+<%= render 'form', design_docs: @design_contract %>
+
+<%= link_to 'Back', leads_path %>
+
+
+<!-- help -->
+
 <div class="container">
   <h2>Customize Design Contract:</h2>
     <%= form_tag '/design-docs', method: :post do %>
