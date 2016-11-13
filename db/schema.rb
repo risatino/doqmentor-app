@@ -10,24 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108011929) do
+ActiveRecord::Schema.define(version: 20161113092603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "active_contracts", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "gig_id"
-    t.integer  "legal_contract_id"
-    t.integer  "music_contract_id"
-    t.integer  "design_contract_id"
-    t.integer  "quantity"
-    t.integer  "total_billable_hours"
-    t.integer  "priority"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.boolean  "active",               default: true
-  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -36,9 +22,13 @@ ActiveRecord::Schema.define(version: 20161108011929) do
     t.string   "address"
     t.string   "notes"
     t.integer  "user_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.boolean  "active",     default: true
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "active",            default: true
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "design_contracts", force: :cascade do |t|
