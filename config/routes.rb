@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :leads
+  
+  get '/leads' => 'leads#index'
+  get '/leads/new' => 'leads#new'
+  post '/leads' => 'leads#create'
+  get '/leads/:id' => 'leads#show'
+  get '/leads/:id/edit' => 'leads#edit'
+  patch '/leads/:id' => 'leads#update'
+  delete '/leads/:id' => 'leads#destroy'
 
   get '/' => 'clients#index'
   get '/clients' => 'clients#index'

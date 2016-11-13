@@ -1,11 +1,11 @@
 <div class="container">
-<%= form_for @lead, url: leads_path, html: { multipart: true } do |f| %>
-  <% if contact.errors.any? %>
+<%= form_for @lead, url: '/leads', html: { multipart: true } do |f| %>
+  <% if lead.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+      <h2><%= pluralize(lead.errors.count, "error") %> prohibited this lead from being saved:</h2>
 
       <ul>
-      <% contact.errors.full_messages.each do |message| %>
+      <% lead.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

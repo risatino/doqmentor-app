@@ -23,9 +23,9 @@
         <td><%= lead.email %></td>
         <td><%= lead.phone %></td>
         <td><%= lead.company %></td>
-        <td><%= link_to 'Show', lead %></td>
-        <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
-        <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', "/leads/#{lead.id}" %></td>
+        <td><%= link_to 'Edit', "/leads/#{lead.id}/edit" %></td>
+        <td><%= link_to 'Destroy', "/leads/#{lead.id}", method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Lead', new_lead_path %>
+<%= link_to 'New Lead', '/leads/new' %>
