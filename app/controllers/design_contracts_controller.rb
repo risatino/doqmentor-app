@@ -29,7 +29,6 @@ class DesignContractsController < ApplicationController
   def update
     @design_contract.update(design_contract_params)
     redirect_to "/design-docs/#{@design_contract.id}"
-
   end
 
   def toggle
@@ -56,17 +55,13 @@ class DesignContractsController < ApplicationController
     @design_contract = DesignContract.find(params[:id])
   end
 
-  # def document_params
-  #   params.require(:document).permit(:signature)  
-  # end
-
   def design_contract_params
-    params.permit(:designer, :client, :gig_name, :title, :due_date, :specs, :billable_hours, :active, :signature)  
+    params.permit(:musician, :client, :gig_name, :title, :event_venue, :notes, :due_date, :billable_hours, :active, :signature)  
   end
 
   def cart_count
     @design_contracts = DesignContract.all
-    p DesignContract.where(:active => true).count 
+    p DesignContract.where(:active => true).count
   end
 
 end

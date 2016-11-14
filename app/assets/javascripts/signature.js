@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function(){
     $('.signature_pad_clear').click(function() { signature_pad.clear()});
     $('.signature_pad_save').click(function(event){
       if (signature_pad.isEmpty()){
-         alert('You must sign to accept the Terms and Conditions');
+         alert('Please sign this document to continue.');
          event.preventDefault();
       } else {
       // console.log(signature_pad.toDataURL());

@@ -2,7 +2,7 @@
 <div class="container">
   <h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
-  <h2>Current Music Document</h2>
+  <h2>Music Contract Number #<%= @music_contract.id %></h2>
   <h3>Musician: <%= @music_contract.musician %></h3>
   <h3>Client: <%= @music_contract.client %></h3>
   <h3>Unique ID: <%= @music_contract.gig_name %></h3>
@@ -37,7 +37,11 @@
     <ul>Music Contract Number #<%= @music_contract.gig_name %></ul>
     <ul><b>"<%= @music_contract.title %>" SPECIAL NOTES:</b> <%= @music_contract.notes %></ul>
   <br>
-    <ul><b>BOOKING AGENT</b> <%= @music_contract.client %> | Signature: _________________________</ul>
+    <ul><b>BOOKING AGENT</b> <%= @music_contract.client %></ul> 
+  <br>
+    <ul>Signature: </ul>
+    <%= image_tag @music_contract.signature.url %>
+  <br>
     <ul>#<%= @music_contract.gig_name %> Event Booked On: <%= @music_contract.due_date %></ul>
     <ul>EVENT VENUE: <%= @music_contract.event_venue %></ul>
   <br>
