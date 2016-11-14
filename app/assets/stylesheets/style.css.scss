@@ -1,5 +1,11 @@
 h1 {color: #FFFFFF;}
 
+.kbw-signature {
+  display: inline-block;
+  border: 1px solid #a0a0a0;
+  -ms-touch-action: none;
+}
+
 .signature_pad {
   width: 400px;
   height: 200px;
@@ -26,7 +32,7 @@ div label input {
    margin-right:100px;
 }
 body {
-    font-family:sans-serif;
+   font-family:sans-serif;
 }
 
 #ck-button {
