@@ -33,7 +33,6 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
   end
 
-
   def update
 
     @client = Client.find(params[:id])
@@ -55,4 +54,5 @@ class ClientsController < ApplicationController
     flash[:warning] = "Your client is deleted."
     redirect_to '/clients'
   end
+
 end

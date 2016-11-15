@@ -2,7 +2,7 @@
 <div class="container">
   <h2><%= link_to 'See Legal Contracts', '/legal-docs', class: "btn btn-default" %> <%= link_to "Edit", "/legal-docs/#{@legal_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/legal-docs/#{@legal_contract.id}", class: "btn btn-warning", method: :delete %></h2>
   <br>
-  <h2>Current Legal Contract</h2>
+  <h2>Legal Contract Number #<%= @legal_contract.id %></h2>
   <h3>Videographer: <%= @legal_contract.videographer %></h3>
   <h3>Hiring Attorney: <%= @legal_contract.hiring_attorney %></h3>
   <h3>Unique Job ID: <a href="/legal-docs/<%= @legal_contract.id %>"><%= @legal_contract.ticket_name %></a></h3>
@@ -29,12 +29,14 @@
   <br>
   <br>
     <ul><b>LEGAL VIEW, INC. VIDEOGRAPHER</b> | <%= @legal_contract.videographer %></ul>
-    <ul><h4><font color="#339933"><b>Approved!</b></font>   <%= image_tag("hanko.jpg", size: "40x40", :alt => "logo stamp") %></h4></ul>
+    <ul><h4><font color="#339933"><b>Approved!</b></font></h4></ul>
     <ul>2863 West 21st Place, Chicago, IL 60622</ul>
     <ul>payments@gmail.com | (800) 600-3333</ul>
   <br>
     <ul><b>FIRM</b> | <%= @legal_contract.firm %></ul>
-    <ul>Signature: _________________________</ul>
+    <ul>Signature: </ul>
+    <%= image_tag @legal_contract.signature.url %>
+    <br>
     <ul><%= @legal_contract.hiring_attorney %> Read-On:</ul>
     <ul>We are now on the record in the matter of: __________________________________</ul>
     <ul>In the (court): __________________________________</ul>

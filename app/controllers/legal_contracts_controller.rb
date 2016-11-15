@@ -1,8 +1,8 @@
 class LegalContractsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_legal_contract, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    @legal_contracts = LegalContract.all
   end
 
   def new
@@ -10,19 +10,9 @@ class LegalContractsController < ApplicationController
   end
 
   def create
-    @legal_contract = LegalContract.create(videographer: params[:videographer],
-                                           hiring_attorney: params[:hiring_attorney],
-                                           firm: params[:firm],
-                                           recording_venue: params[:recording_venue],
-                                           due_date: params[:due_date],
-                                           instructions: params[:instructions],
-                                           witness: params[:witness],
-                                           ticket_name: params[:ticket_name],
-                                           media_format: params[:media_format],
-                                           billable_hours: params[:billable_hours])
+    @legal_contract = LegalContract.create(legal_contract_params)
     
     if @legal_contract.save
-      flash[:success] = "Your document has been created"
       redirect_to "/legal-docs/#{@legal_contract.id}"
     else
       render 'new.html.erb'
@@ -31,27 +21,13 @@ class LegalContractsController < ApplicationController
   end
 
   def show
-    @legal_contract = LegalContract.find(params[:id])
   end
 
   def edit
-    @legal_contract = LegalContract.find(params[:id])
   end
 
   def update
-    @legal_contract = LegalContract.find(params[:id])
-    @legal_contract.update(videographer: params[:videographer],
-                           hiring_attorney: params[:hiring_attorney],
-                           firm: params[:firm],
-                           recording_venue: params[:recording_venue],
-                           due_date: params[:due_date],
-                           instructions: params[:instructions],
-                           witness: params[:witness],
-                           ticket_name: params[:ticket_name],
-                           media_format: params[:media_format],
-                           billable_hours: params[:billable_hours])
-
-    flash[:success] = "Your contract has been updated."
+    @legal_contract.update(legal_contract_params)
     redirect_to "/legal-docs/#{@legal_contract.id}"  
   end
 
@@ -69,10 +45,22 @@ class LegalContractsController < ApplicationController
   end
 
   def destroy
-    @legal_contract = LegalContract.find(params[:id])
     @legal_contract.destroy
-    
-    flash[:warning] = "Your contract has been deleted."
     redirect_to '/legal-docs' 
+  end
+
+  private
+
+  def set_legal_contract
+    @legal_contract = LegalContract.find(params[:id])
+  end
+
+  def legal_contract_params
+    params.permit(:videographer, :hiring_attorney, :firm, :recording_venue, :due_date, :instructions, :witness, :ticket_name, :media_format, :billable_hours, :active, :signature)
+  end
+
+  def cart_count
+    @legal_contracts = LegalContract.all
+    p LegalContract.where(:active => true).count
   end
 end

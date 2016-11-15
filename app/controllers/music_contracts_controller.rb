@@ -1,5 +1,5 @@
 class MusicContractsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_music_contract, only: [:show, :edit, :update, :destroy]
 
   def index
     @music_contracts = MusicContract.all
@@ -10,18 +10,10 @@ class MusicContractsController < ApplicationController
   end
 
   def create
-    @music_contract = MusicContract.create(musician: params[:musician],
-                                           client: params[:client],
-                                           gig_name: params[:gig_name],
-                                           title: params[:title],
-                                           event_venue: params[:event_venue],
-                                           notes: params[:notes],
-                                           due_date: params[:due_date],
-                                           billable_hours: params[:billable_hours])
+    @music_contract = MusicContract.create(music_contract_params)
     
     if @music_contract.save
-      flash[:success] = "Your document has been created"
-      redirect_to "/music-docs/#{@music_contract.id}"
+    redirect_to "/music-docs/#{@music_contract.id}"
     else
       render 'new.html.erb'
     end
@@ -29,26 +21,13 @@ class MusicContractsController < ApplicationController
   end
 
   def show
-    @music_contract = MusicContract.find(params[:id])
   end
 
   def edit
-    @music_contract = MusicContract.find(params[:id])
   end
 
   def update
-    @music_contract = MusicContract.find(params[:id])
-    @music_contract.update(musician: params[:musician],
-                           client: params[:client],
-                           gig_name: params[:gig_name],
-                           title: params[:title],
-                           event_venue: params[:event_venue],
-                           notes: params[:notes],
-                           due_date: params[:due_date],
-                           billable_hours: params[:billable_hours])
-
-
-    flash[:success] = "Your contract has been updated."
+    @music_contract.update(music_contract_params)
     redirect_to "/music-docs/#{@music_contract.id}"  
   end
 
@@ -66,10 +45,23 @@ class MusicContractsController < ApplicationController
   end
 
   def destroy
-    @music_contract = MusicContract.find(params[:id])
     @music_contract.destroy
-    
-    flash[:warning] = "Your contract has been deleted."
     redirect_to '/music-docs' 
   end
+
+  private
+
+  def set_music_contract
+    @music_contract = MusicContract.find(params[:id])
+  end
+
+  def music_contract_params
+    params.permit(:musician, :client, :gig_name, :title, :event_venue, :notes, :due_date, :billable_hours, :active, :signature)  
+  end
+
+  def cart_count
+    @music_contracts = MusicContract.all
+    p MusicContract.where(:active => true).count  
+  end
+
 end

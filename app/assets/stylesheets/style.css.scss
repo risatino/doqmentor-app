@@ -1,3 +1,29 @@
+td, th { 
+    font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic", Arial,sans-serif;
+    padding: 8px;
+}
+
+h1 {color: #FFFFFF;}
+
+.kbw-signature {
+  display: inline-block;
+  border: 1px solid #a0a0a0;
+  -ms-touch-action: none;
+}
+
+.signature_pad {
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.signature_pad_body canvas {
+  width: 100%;
+  height: 100%;
+  border: dotted #444;
+  background: #FFFFFF;
+}
+
 #content-wrapper {
   border-style: solid;
   background: white;
@@ -11,7 +37,7 @@ div label input {
    margin-right:100px;
 }
 body {
-    font-family:sans-serif;
+   font-family:sans-serif;
 }
 
 #ck-button {

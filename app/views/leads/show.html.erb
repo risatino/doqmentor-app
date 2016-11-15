@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+  <p>
+    <%= image_tag @lead.logo.url(:thumb) %>
+  </p>
+  <p>
+    <strong>Firstname:</strong>
+    <%= @lead.firstname %>
+  </p>
+
+  <p>
+    <strong>Lastname:</strong>
+    <%= @lead.lastname %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @lead.email %>
+  </p>
+
+  <p>
+    <strong>Phone:</strong>
+    <%= @lead.phone %>
+  </p>
+
+  <p>
+    <strong>Company:</strong>
+    <%= @lead.company %>
+  </p>
+
+<%= link_to 'Edit', "/leads/#{@lead.id}/edit", class: "btn btn-default" %> |
+<%= link_to 'Back', leads_path, class: "btn btn-default" %>

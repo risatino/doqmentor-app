@@ -6,10 +6,9 @@
   <h3>Designer: <%= @design_contract.designer %></h3>
   <h3>Client: <%= @design_contract.client %></h3>
   <h3>Unique ID: <%= @design_contract.gig_name %></h3>
-  <h3>Project Title: <a href="/design-docs/<%= @design_contract.id %>"><%= @design_contract.title %> <%= @design_contract.gig_name %></a></h3>
+  <h3>Project Title: <%= @design_contract.title %></a></h3>
   <h3>Gig Due Date: <%= @design_contract.due_date %></h3>
   <h3>Project Specs: <%= @design_contract.specs %></h3>
-
   <h4>Click To Change Job Status  
     <% if @design_contract.active %> 
     <%= link_to "In Progress", "/design-docs/#{@design_contract.id}/toggle", class: "btn btn-default" %>
@@ -29,17 +28,19 @@
   <br>
   <br>
     <ul><b>GRAPHIC DESIGNER</b> <%= @design_contract.designer %></ul>
-    <ul><h4><font color="#339933"><b>Approved!</b></font>  <%= image_tag("hanko.jpg", size: "40x40", :alt => "logo stamp") %></h4></ul>
+    <ul><h4><font color="#339933"><b>Approved!</b></font></h4></ul>
     <ul>Address Payments To: <%= @design_contract.designer %></ul>
     <ul>2863 West 21st Place, Chicago, IL 60622</ul>
     <ul>payments@gmail.com <b>|</b> (800) 600-3333</ul>
   <br>
     <ul>Design Contract Number #<%= @design_contract.gig_name %></ul>
-    <ul>"<%= @design_contract.title %>" Specs: Produce <%= @design_contract.specs %></ul>
+    <ul>"<%= @design_contract.title %>" Specs: <%= @design_contract.specs %></ul>
   <br>
     <ul><b>CLIENT</b> | <%= @design_contract.client %></ul>
-  <br>
-    <ul>Signatures: _________________________</ul>
+    <ul>Signature: </ul>
+    <% if @design_contract.signature.url %>
+      <%= image_tag @design_contract.signature.url %>
+    <% end %>
   <br>
     <ul>#<%= @design_contract.gig_name %> To Be Completed By: <%= @design_contract.due_date %></ul>
   <br>

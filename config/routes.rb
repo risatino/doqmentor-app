@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get '/' => 'clients#index'
   get '/clients' => 'clients#index'
   get '/clients/new' => 'clients#new'
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   patch '/clients/:id' => 'clients#update'
   delete '/clients/:id' => 'clients#destroy'
 
+  resources :leads
+
   get '/design-docs' => 'design_contracts#index'
   get '/design-docs/new' => 'design_contracts#new'
   post '/design-docs' => 'design_contracts#create'
@@ -16,7 +19,6 @@ Rails.application.routes.draw do
   patch '/design-docs/:id' => 'design_contracts#update'
   get '/design-docs/:id/toggle' => 'design_contracts#toggle'
   delete '/design-docs/:id' => 'design_contracts#destroy'
-
 
   get '/music-docs' => 'music_contracts#index'
   get '/music-docs/new' => 'music_contracts#new'
