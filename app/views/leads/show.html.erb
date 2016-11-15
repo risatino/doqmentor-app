@@ -28,5 +28,5 @@
     <%= @lead.company %>
   </p>
 
-<%= link_to 'Edit', "/leads/#{@lead.id}/edit" %> |
-<%= link_to 'Back', leads_path %>
+<%= link_to 'Edit', "/leads/#{@lead.id}/edit", class: "btn btn-default" %> |
+<%= link_to 'Back', leads_path, class: "btn btn-default" %>

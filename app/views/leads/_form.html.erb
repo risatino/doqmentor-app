@@ -1,4 +1,3 @@
-<div class="container">
 <%= form_for @lead, html: { multipart: true } do |f| %>
   <% if lead.errors.any? %>
     <div id="error_explanation">
@@ -43,7 +42,7 @@
   </div>
 <br>
   <div class="actions">
-    <%= f.submit 'Save' %>
+    <%= f.submit 'Save', class: "btn btn-info" %>
   </div>
-  
+<br>  
  <% end %> 
