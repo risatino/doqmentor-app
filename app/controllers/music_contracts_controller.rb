@@ -56,7 +56,7 @@ class MusicContractsController < ApplicationController
   end
 
   def music_contract_params
-    params.permit(:designer, :client, :gig_name, :title, :due_date, :specs, :billable_hours, :active, :signature)  
+    params.permit(:musician, :client, :gig_name, :title, :event_venue, :notes, :due_date, :billable_hours, :active, :signature)  
   end
 
   def cart_count

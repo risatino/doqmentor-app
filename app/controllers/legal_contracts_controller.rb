@@ -56,7 +56,7 @@ class LegalContractsController < ApplicationController
   end
 
   def legal_contract_params
-    params.permit(:videographer, :hiring_attorney, :firm, :recording_venue, :due_date, :instructions, :witness, :ticket_name, :media_format, :billable_hours, :signature)
+    params.permit(:videographer, :hiring_attorney, :firm, :recording_venue, :due_date, :instructions, :witness, :ticket_name, :media_format, :billable_hours, :active, :signature)
   end
 
   def cart_count
