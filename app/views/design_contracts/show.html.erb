@@ -1,6 +1,8 @@
 <section>
 <div class="container">
-  <h2><%= link_to 'See Design Contracts', '/design-docs', class: "btn btn-default" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <div class="header-text">
+    <h2><%= link_to 'See Design Contracts', '/design-docs', class: "btn btn-default" %> <%= link_to "Edit", "/design-docs/#{@design_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/design-docs/#{@design_contract.id}", class: "btn btn-default", method: :delete %></h2>
+  </div>
   <br>
   <h2>Design Contract Number #<%= @design_contract.id %></h2>
   <h3>Designer: <%= @design_contract.designer %></h3>

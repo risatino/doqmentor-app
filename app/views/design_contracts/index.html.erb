@@ -1,6 +1,8 @@
 <section>
-<div class="container">
-  <h2><%= link_to 'Design Contracts', '/design-docs',  class: "btn btn-default" %> <%= link_to 'New Design Contract', '/design-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
+  <div class="container">
+    <div class="header-text">
+      <h2><%= link_to 'Design Contracts', '/design-docs',  class: "btn btn-default" %> <%= link_to 'New Design Contract', '/design-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-default" %></h2>
+    </div>  
   <br>
   <% active = 0 %>
   <% @design_contracts.each do |contract| %>

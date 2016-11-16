@@ -6,14 +6,29 @@
 td, th { 
     font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic", Arial,sans-serif;
     padding: 8px;
+    text-align: center;
+}
+
+tr {
+  border-bottom: 2px dashed #FFED00;
+}
+
+.thead-default {
+  text-align: center;
+  background-color: #101010;
+  color: #FFFFFF;
 }
 
 table {
-  background-color: #999999;
-  text-color: #FFFFFF;
+  background-color: #FFFFFF;
+  border: 2px solid #101010;
 }
 
 h1 {color: #FFFFFF;}
+
+.header-text {
+  text-align: center;
+}
 
 .kbw-signature {
   display: inline-block;
@@ -33,6 +48,13 @@ h1 {color: #FFFFFF;}
   border: dotted #444;
   background: #FFFFFF;
 }
+
+.img-responsive {
+  height: 50%;
+  width: 50%;
+  margin: auto;
+}
+
 
 #content-wrapper {
   border-style: solid;

@@ -1,6 +1,8 @@
 <section>
-<div class="container">
-<h2><%= link_to 'See Music Contracts', '/music-docs',  class: "btn btn-default" %> <%= link_to 'New Music Contract', '/music-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
+  <div class="container">
+    <div class="header-text">
+    <h2><%= link_to 'See Music Contracts', '/music-docs',  class: "btn btn-default" %> <%= link_to 'New Music Contract', '/music-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-default" %></h2>
+    </div>
 <br>
 <% active = 0 %>
 <% @music_contracts.each do |contract| %>
@@ -27,5 +29,5 @@
   </h4>
   <br>
 <% end %>
-</div>
+  </div>
 </section>

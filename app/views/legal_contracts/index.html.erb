@@ -1,7 +1,9 @@
 <section>
-<div class="container">
-<h2><%= link_to 'Legal Contracts', '/legal-docs',  class: "btn btn-default" %> <%= link_to 'New Legal Contract', '/legal-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-info" %></h2>
-<br>
+  <div class="container">
+    <div class="header-text">
+    <h2><%= link_to 'Legal Contracts', '/legal-docs',  class: "btn btn-default" %> <%= link_to 'New Legal Contract', '/legal-docs/new', class: "btn btn-default" %> <%= link_to 'All Clients', '/clients', class: "btn btn-default" %></h2>
+    <br>
+    </div>
 
 <% active = 0 %>
 <% @legal_contracts.each do |contract| %>
@@ -30,5 +32,5 @@
     </h4>
   <br>  
 <% end %>
-</div> 
+  </div> 
 </section>

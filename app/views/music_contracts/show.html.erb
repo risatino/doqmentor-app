@@ -1,6 +1,8 @@
 <section>
 <div class="container">
-  <h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-warning", method: :delete %></h2>
+  <div class="header-text">
+    <h2><%= link_to 'See Music Contracts', '/music-docs', class: "btn btn-default" %> <%= link_to "Edit", "/music-docs/#{@music_contract.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/music-docs/#{@music_contract.id}", class: "btn btn-default", method: :delete %></h2>
+  </div>
   <br>
   <h2>Music Contract Number #<%= @music_contract.id %></h2>
   <h3>Musician: <%= @music_contract.musician %></h3>
@@ -15,7 +17,7 @@
     <% if @music_contract.active %> 
     <%= link_to "In Progress", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-default" %>
     <% else %> 
-    <%= link_to "Complete!", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-success" %>
+    <%= link_to "Complete!", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-default" %>
     <% end %>
   </h4> 
   <br>
