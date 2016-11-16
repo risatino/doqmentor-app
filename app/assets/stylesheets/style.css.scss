@@ -8,6 +8,11 @@ td, th {
     padding: 8px;
 }
 
+table {
+  background-color: #999999;
+  text-color: #FFFFFF;
+}
+
 h1 {color: #FFFFFF;}
 
 .kbw-signature {
@@ -40,9 +45,6 @@ h1 {color: #FFFFFF;}
 
 div label input {
    margin-right:100px;
-}
-body {
-   font-family:sans-serif;
 }
 
 #ck-button {
