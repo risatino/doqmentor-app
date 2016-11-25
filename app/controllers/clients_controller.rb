@@ -15,7 +15,8 @@ class ClientsController < ApplicationController
                             user_id: current_user.id,
                             email: params[:email],
                             address: params[:address],
-                            notes: params[:notes])
+                            notes: params[:notes],
+                            image: params[:image])
 
     if @client.save
       flash[:success] = "Your client has been created"
@@ -41,7 +42,8 @@ class ClientsController < ApplicationController
                   user_id: current_user.id,
                   email: params[:email],
                   address: params[:address],
-                  notes: params[:notes])
+                  notes: params[:notes],
+                  image: params[:image])
 
     flash[:success] = "Your client has been updated."
     redirect_to "/clients/#{@client.id}"
