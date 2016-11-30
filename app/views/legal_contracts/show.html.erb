@@ -17,7 +17,7 @@
     <% if @legal_contract.active %> 
     <%= link_to "In Progress", "/legal-docs/#{@legal_contract.id}/toggle", class: "btn btn-default" %>
     <% else %> 
-    <%= link_to "Complete!", "/legal-docs/#{@legal_contract.id}/toggle", class: "btn btn-default" %>
+    <%= link_to "Complete!", "/legal-docs/#{@legal_contract.id}/toggle", class: "btn btn-success" %>
     <% end %>
   </h4> 
   <br>

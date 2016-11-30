@@ -17,7 +17,7 @@
     <% if @music_contract.active %> 
     <%= link_to "In Progress", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-default" %>
     <% else %> 
-    <%= link_to "Complete!", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-default" %>
+    <%= link_to "Complete!", "/music-docs/#{@music_contract.id}/toggle", class: "btn btn-success" %>
     <% end %>
   </h4> 
   <br>
