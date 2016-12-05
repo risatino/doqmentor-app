@@ -21,6 +21,10 @@
       <%= label_tag :notes %>
       <%= text_field_tag :notes, @client.notes %>
     </div>
+    <div>
+      <%= label_tag :image %>
+      <%= text_field_tag :image, @client.image %>
+    </div>
   <br>
     <div>
       <%= submit_tag "Create New Client", class:"btn btn-default" %>

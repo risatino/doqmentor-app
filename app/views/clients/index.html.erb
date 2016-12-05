@@ -8,6 +8,7 @@
 <br>
 <h2>Client Address Book</h2>
   <% @clients.each do |client| %>
+    <h3><%= image_tag client.image.url(:thumb) %></h3>
     <h3>Client: <a href="/clients/<%= client.id %>"><%= client.name %></a></h3>
     <h3>Address: <%= client.address %></h3>
     <h3>Phone: <%= client.phone %></h3>

@@ -3,6 +3,7 @@
 <h2><%= link_to 'Back To Home Page', '/clients', class: "btn btn-default" %> <%= link_to "Edit", "/clients/#{@client.id}/edit", class: "btn btn-default" %> <%= link_to 'Delete', "/clients/#{@client.id}", class: "btn btn-default", method: :delete %></h2>
 <br>
 <h2>Client Info</h2>
+<h3><%= image_tag @client.image.url(:thumb) %></h3>
 <h3>Name: <a href="/clients/<%= @client.id %>"><%= @client.name %></a></h3>
 <h3>Email: <%= @client.email %></h3>
 <h3>Company Address: <%= @client.address %></h3>
